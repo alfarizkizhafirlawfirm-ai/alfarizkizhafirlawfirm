@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tulis Berita (Admin) — Al Farizki &amp; Zhafir Law Firm (referensi desain)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap">
+  <style>
+    :root{
+      --navy-950:#0A1C36; --navy-900:#0F2545; --navy-800:#173B6C; --navy-100:#E7ECF3;
+      --gold:#B08D4F; --gold-light:#DCC28C; --paper:#F8F6F1; --ink:#181818;
+      --ink-soft:#57616D; --line:#DEDACE;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Work Sans',sans-serif;color:var(--ink);}
+    h1,h2,h3{font-family:'Playfair Display',serif;margin:0;}
+    a{color:inherit;text-decoration:none;}
+    button{font-family:'Work Sans',sans-serif;cursor:pointer;}
+    input,textarea,select{font-family:'Work Sans',sans-serif;}
+    input:focus,textarea:focus,select:focus{outline:2px solid var(--gold);outline-offset:1px;}
+
+    /* TABLET */
+    @media (max-width: 1100px){
+      .abar{padding:0 22px !important;}
+      .badan{padding:28px 26px !important;gap:22px !important;}
+      .samping{width:310px !important;flex-basis:310px !important;}
+    }
+
+    /* HP — editor kiri, panel pengaturan kanan, sama seperti laptop */
+    @media (max-width: 760px){
+      .abar{padding:0 12px !important;height:44px !important;flex-basis:44px !important;}
+      .abar img{height:18px !important;}
+      .abar-kiri{gap:8px !important;}
+      .abar-kiri > span:last-child{font-size:8.5px !important;letter-spacing:0.5px !important;}
+      .abar-kanan{gap:8px !important;}
+      .abar-kanan a, .abar-kanan span{font-size:9px !important;}
+      .abar-kanan > span{gap:5px !important;}
+      .avatar{width:22px !important;height:22px !important;font-size:8px !important;}
+
+      .badan{padding:14px 10px !important;gap:8px !important;}
+      .editor{gap:8px !important;}
+      .samping{width:37% !important;flex:0 0 37% !important;gap:8px !important;}
+      .editor h1{font-size:14px !important;margin-bottom:3px !important;}
+      .editor > div:first-child p{font-size:8px !important;line-height:1.4;}
+      .kartu{padding:9px 8px !important;}
+      .kartu label, .kartu > span{font-size:7.5px !important;margin-bottom:4px !important;letter-spacing:0.3px !important;}
+      #judul{height:28px !important;font-size:9px !important;padding:0 6px !important;}
+      .dua-kolom{gap:5px !important;margin-top:7px !important;}
+      .dua-kolom select{height:24px !important;font-size:8px !important;padding:0 3px !important;}
+      .unggah{padding:7px !important;gap:6px !important;}
+      .unggah > span:first-child{width:22px !important;height:22px !important;flex:0 0 22px;}
+      .unggah > span:first-child svg{width:12px !important;height:12px !important;}
+      .unggah div div:first-child{font-size:7.5px !important;}
+      .unggah div div:last-child{font-size:6.5px !important;}
+      .unggah button{padding:5px 6px !important;font-size:7.5px !important;}
+      .kotak-isi{min-height:220px !important;}
+      .kotak-isi > div:first-child{padding:5px 6px !important;gap:0 !important;}
+      .kotak-isi > div:first-child button{width:20px !important;height:20px !important;font-size:9px !important;padding:0 !important;}
+      .kotak-isi > div:first-child svg{width:10px !important;height:10px !important;}
+      #isi{font-size:8.5px !important;padding:8px 8px !important;line-height:1.65 !important;}
+
+      .samping > div{padding:9px 8px !important;}
+      .samping span, .samping label{font-size:7.5px !important;}
+      .samping p{font-size:7px !important;line-height:1.45 !important;margin-top:6px !important;margin-bottom:8px !important;}
+      .samping button{height:26px !important;font-size:8px !important;}
+      .samping > div:first-child > div:first-child{margin-bottom:8px !important;}
+      .samping > div:first-child > div:nth-child(2){gap:4px !important;}
+      .samping input{height:24px !important;font-size:7.5px !important;padding:0 5px !important;}
+      .samping textarea{height:52px !important;font-size:7.5px !important;padding:5px !important;}
+      .samping > div > div{margin-top:3px !important;margin-bottom:7px !important;}
+      .samping svg{width:10px !important;height:10px !important;}
+      .samping > div:last-child > div{padding:7px !important;}
+      .samping > div:last-child > div div{font-size:7px !important;}
+      .samping > div:last-child > div > div:nth-child(2){font-size:9px !important;}
+    }
+  </style>
+</head>
+<body>
+<div style="width:100%;min-height:100vh;background:var(--paper);display:flex;flex-direction:column;">
+
+  <!-- ADMIN BAR -->
+  <div class="abar" style="height:52px;background:var(--navy-950);display:flex;align-items:center;justify-content:space-between;padding:0 32px;flex:0 0 52px;">
+    <div class="abar-kiri" style="display:flex;align-items:center;gap:18px;">
+      <img src="../public/images/logo-putih.png" alt="Al Farizki &amp; Zhafir Law Firm" style="height:26px;width:auto;display:block;">
+      <span style="width:1px;height:20px;background:rgba(255,255,255,0.2);"></span>
+      <span style="font-size:12px;color:#B08D4F;font-weight:700;letter-spacing:1px;text-transform:uppercase;">Mode Admin</span>
+    </div>
+    <div class="abar-kanan" style="display:flex;align-items:center;gap:22px;">
+      <a href="admin-berita.html" style="font-size:13px;color:#C9D3E0;font-weight:500;">&larr; Kembali ke daftar artikel</a>
+      <span style="display:flex;align-items:center;gap:10px;">
+        <span class="avatar" style="width:30px;height:30px;border-radius:50%;background:#B08D4F;color:var(--navy-950);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">GA</span>
+        <span style="font-size:13px;color:#FFFFFF;font-weight:500;">Gilang</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="badan" style="flex:1;width:100%;max-width:1440px;margin:0 auto;padding:34px 48px;display:flex;gap:30px;">
+
+    <!-- EDITOR -->
+    <div class="editor" style="flex:1;display:flex;flex-direction:column;gap:20px;min-width:0;">
+
+      <div>
+        <h1 style="font-size:28px;color:var(--navy-950);font-weight:700;margin-bottom:6px;">Tulis Berita / Opini Baru</h1>
+        <p style="font-size:13.5px;color:var(--ink-soft);">Artikel yang diterbitkan langsung muncul di halaman Berita website, tanpa mengubah kode.</p>
+      </div>
+
+      <div class="kartu" style="background:#FFFFFF;border:1px solid var(--line);padding:26px 28px;">
+        <label for="judul" style="display:block;font-size:12px;font-weight:700;color:var(--navy-900);margin-bottom:8px;letter-spacing:0.5px;text-transform:uppercase;">Judul Artikel</label>
+        <input id="judul" type="text" value="Karyawan Di-PHK Sepihak: Langkah Hukum yang Bisa Diambil" style="width:100%;height:52px;padding:0 16px;font-size:17px;font-weight:600;color:var(--navy-950);border:1px solid var(--line);background:#FFFFFF;">
+
+        <div class="dua-kolom" style="display:flex;gap:18px;margin-top:20px;">
+          <div style="flex:1;min-width:0;">
+            <label for="kategori" style="display:block;font-size:12px;font-weight:700;color:var(--navy-900);margin-bottom:8px;letter-spacing:0.5px;text-transform:uppercase;">Kategori</label>
+            <select id="kategori" style="width:100%;height:44px;padding:0 12px;font-size:14px;border:1px solid var(--line);background:#FFFFFF;color:var(--ink);">
+              <option>Opini Hukum</option>
+              <option>Berita Kantor</option>
+              <option>Legal Update</option>
+            </select>
+          </div>
+          <div style="flex:1;min-width:0;">
+            <label for="penulis" style="display:block;font-size:12px;font-weight:700;color:var(--navy-900);margin-bottom:8px;letter-spacing:0.5px;text-transform:uppercase;">Penulis</label>
+            <select id="penulis" style="width:100%;height:44px;padding:0 12px;font-size:14px;border:1px solid var(--line);background:#FFFFFF;color:var(--ink);">
+              <option>Gilang Al Farizki Harman, S.H.</option>
+              <option>Zhafir Galang Arissaputra, S.H.</option>
+              <option>Arimbi Gita Pramudya Wardani, S.H.</option>
+              <option>Bayu Nando Prayoga, S.H.</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu" style="background:#FFFFFF;border:1px solid var(--line);padding:26px 28px;">
+        <span style="display:block;font-size:12px;font-weight:700;color:var(--navy-900);margin-bottom:10px;letter-spacing:0.5px;text-transform:uppercase;">Gambar Sampul</span>
+        <div class="unggah" style="border:1.5px dashed #C7BFA9;padding:26px;display:flex;align-items:center;gap:18px;">
+          <span style="width:52px;height:52px;background:var(--navy-100);display:flex;align-items:center;justify-content:center;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-700)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>
+          </span>
+          <div style="flex:1;">
+            <div style="font-size:13.5px;color:var(--navy-900);font-weight:600;">Seret gambar ke sini atau pilih dari komputer</div>
+            <div style="font-size:12px;color:var(--ink-soft);margin-top:3px;">JPG atau PNG, disarankan 1200 &times; 630 piksel</div>
+          </div>
+          <button type="button" style="font-size:13px;font-weight:600;padding:11px 20px;border:1px solid #173B6C;background:#FFFFFF;color:#173B6C;">Pilih File</button>
+        </div>
+      </div>
+
+      <div class="kotak-isi" style="background:#FFFFFF;border:1px solid var(--line);flex:1;display:flex;flex-direction:column;min-height:380px;">
+        <div style="display:flex;align-items:center;gap:4px;padding:12px 16px;border-bottom:1px solid var(--line);background:#FBFAF6;">
+          <button type="button" aria-label="Tebal" style="width:32px;height:32px;border:none;background:none;font-size:14px;font-weight:800;color:var(--navy-900);">B</button>
+          <button type="button" aria-label="Miring" style="width:32px;height:32px;border:none;background:none;font-size:14px;font-style:italic;color:var(--navy-900);">I</button>
+          <button type="button" aria-label="Judul bagian" style="height:32px;padding:0 10px;border:none;background:none;font-size:13px;font-weight:700;color:var(--navy-900);">H2</button>
+          <span style="width:1px;height:20px;background:var(--line);margin:0 6px;"></span>
+          <button type="button" aria-label="Daftar berpoin" style="width:32px;height:32px;border:none;background:none;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy-900)" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg>
+          </button>
+          <button type="button" aria-label="Tautan" style="width:32px;height:32px;border:none;background:none;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy-900)" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.5-1.5"></path></svg>
+          </button>
+          <button type="button" aria-label="Sisipkan gambar" style="width:32px;height:32px;border:none;background:none;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy-900)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>
+          </button>
+        </div>
+        <label for="isi" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Isi artikel</label>
+        <textarea id="isi" style="flex:1;width:100%;border:none;padding:22px 24px;font-size:14.5px;line-height:1.85;color:var(--ink);resize:none;background:#FFFFFF;">PHK sepihak adalah pemutusan hubungan kerja yang dilakukan tanpa memenuhi prosedur yang diatur undang-undang. Dalam praktiknya, pekerja sering menerima pemberitahuan mendadak tanpa penjelasan alasan yang sah.
+
+Artikel ini membahas apa yang bisa dilakukan pekerja, mulai dari mencatat bukti, mengajukan perundingan bipartit, hingga langkah ke pengadilan hubungan industrial apabila perundingan gagal.</textarea>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="samping" style="width:380px;flex:0 0 380px;display:flex;flex-direction:column;gap:20px;">
+
+      <div style="background:#FFFFFF;border:1px solid var(--line);padding:22px 24px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
+          <span style="font-size:12px;font-weight:700;color:var(--navy-900);letter-spacing:0.5px;text-transform:uppercase;">Status</span>
+          <span style="font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:12px;background:#F6EEDD;color:#8A6A2F;">Draf</span>
+        </div>
+        <div style="display:flex;gap:10px;">
+          <button type="button" style="flex:1;height:44px;border:1px solid #173B6C;background:#FFFFFF;color:#173B6C;font-size:13.5px;font-weight:600;">Simpan Draf</button>
+          <button type="button" style="flex:1;height:44px;border:none;background:#B08D4F;color:var(--navy-950);font-size:13.5px;font-weight:700;">Terbitkan</button>
+        </div>
+        <p style="font-size:12px;color:var(--ink-soft);margin:14px 0 0;line-height:1.6;">Setelah diterbitkan, artikel langsung tampil di halaman Berita dan bisa ditemukan mesin pencari.</p>
+      </div>
+
+      <div style="background:#FFFFFF;border:1px solid var(--line);padding:22px 24px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B08D4F" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <span style="font-size:12px;font-weight:700;color:var(--navy-900);letter-spacing:0.5px;text-transform:uppercase;">Pengaturan Pencarian</span>
+        </div>
+        <p style="font-size:12px;color:var(--ink-soft);line-height:1.6;margin:0 0 18px;">Bagian ini yang menentukan tampilan artikel saat muncul di hasil pencarian.</p>
+
+        <label for="seotitle" style="display:block;font-size:12px;font-weight:600;color:var(--navy-900);margin-bottom:7px;">Judul untuk mesin pencari</label>
+        <input id="seotitle" type="text" value="PHK Sepihak: Langkah Hukum Pekerja" style="width:100%;height:42px;padding:0 12px;font-size:13.5px;border:1px solid var(--line);background:#FFFFFF;color:var(--ink);">
+        <div style="display:flex;justify-content:space-between;margin:6px 0 16px;">
+          <span style="font-size:11px;color:#2E7D5B;font-weight:600;">Panjang ideal</span>
+          <span style="font-size:11px;color:var(--ink-soft);">34 / 60 karakter</span>
+        </div>
+
+        <label for="seodesc" style="display:block;font-size:12px;font-weight:600;color:var(--navy-900);margin-bottom:7px;">Deskripsi singkat</label>
+        <textarea id="seodesc" style="width:100%;height:76px;padding:10px 12px;font-size:13px;line-height:1.55;border:1px solid var(--line);background:#FFFFFF;color:var(--ink);resize:none;">Panduan praktis dari Al Farizki &amp; Zhafir Law Firm untuk pekerja yang mengalami PHK sepihak: bukti yang perlu disiapkan hingga langkah hukumnya.</textarea>
+        <div style="display:flex;justify-content:space-between;margin:6px 0 16px;">
+          <span style="font-size:11px;color:#2E7D5B;font-weight:600;">Panjang ideal</span>
+          <span style="font-size:11px;color:var(--ink-soft);">146 / 160 karakter</span>
+        </div>
+
+        <label for="slug" style="display:block;font-size:12px;font-weight:600;color:var(--navy-900);margin-bottom:7px;">Alamat artikel (URL)</label>
+        <input id="slug" type="text" value="/berita/phk-sepihak-langkah-hukum" style="width:100%;height:42px;padding:0 12px;font-size:13px;border:1px solid var(--line);background:#FBFAF6;color:var(--ink-soft);">
+      </div>
+
+      <div style="background:var(--navy-950);padding:22px 24px;">
+        <span style="display:block;font-size:11.5px;font-weight:700;color:#B08D4F;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">Pratinjau di Hasil Pencarian</span>
+        <div style="background:#FFFFFF;padding:18px 18px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--navy-100);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--navy-800);">AZ</span>
+            <div>
+              <div style="font-size:11.5px;color:#202124;font-weight:600;line-height:1.2;">Al Farizki &amp; Zhafir Law Firm</div>
+              <div style="font-size:10.5px;color:#5F6368;line-height:1.2;">alfarizkizhafir.com &rsaquo; berita</div>
+            </div>
+          </div>
+          <div style="font-size:16px;color:#1A0DAB;line-height:1.35;margin-bottom:5px;">PHK Sepihak: Langkah Hukum Pekerja</div>
+          <div style="font-size:12.5px;color:#4D5156;line-height:1.55;">Panduan praktis dari Al Farizki &amp; Zhafir Law Firm untuk pekerja yang mengalami PHK sepihak: bukti yang perlu disiapkan hingga langkah hukumnya.</div>
+        </div>
+        <p style="font-size:11.5px;color:#8FA0B8;margin:12px 0 0;line-height:1.6;">Ilustrasi tampilan ringkasan artikel di mesin pencari. Hasil sebenarnya ditentukan oleh mesin pencari.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

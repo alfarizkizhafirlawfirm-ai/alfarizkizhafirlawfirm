@@ -1,0 +1,123 @@
+{
+  "warna": {
+    "accent_emas": "#B08D4F",
+    "primary_navy": "#173B6C"
+  },
+  "whatsapp": {
+    "nomor": "6285941862969",
+    "tampil": "0859-4186-2969",
+    "url": "https://wa.me/6285941862969?text=Halo%20Al%20Farizki%20%26%20Zhafir%20Law%20Firm%2C%20saya%20ingin%20berkonsultasi%20mengenai%20masalah%20hukum."
+  },
+  "email": "alfarizkizhafirlawfirm@gmail.com",
+  "alamat": "Lowokwaru, Kota Malang",
+  "menu": [
+    {
+      "label": "Beranda",
+      "href": "#beranda"
+    },
+    {
+      "label": "Tentang Kami",
+      "href": "#tentang"
+    },
+    {
+      "label": "Tim Kami",
+      "href": "#tim"
+    },
+    {
+      "label": "Layanan",
+      "href": "#layanan"
+    },
+    {
+      "label": "Berita",
+      "href": "#berita"
+    }
+  ],
+  "fokus_kami": [
+    {
+      "icon": "/images/ikon/perusahaan.png",
+      "label": "Hukum Perusahaan"
+    },
+    {
+      "icon": "/images/ikon/pertanahan.png",
+      "label": "Hukum Pertanahan"
+    },
+    {
+      "icon": "/images/ikon/ketenagakerjaan.png",
+      "label": "Hukum Ketenagakerjaan"
+    },
+    {
+      "icon": "/images/ikon/perizinan.png",
+      "label": "Hukum Perizinan"
+    },
+    {
+      "icon": "/images/ikon/persaingan-usaha-konsumen.png",
+      "label": "Hukum Persaingan Usaha & Konsumen"
+    },
+    {
+      "icon": "/images/ikon/perbankan.png",
+      "label": "Hukum Perbankan"
+    },
+    {
+      "icon": "/images/ikon/pertambangan.png",
+      "label": "Hukum Pertambangan"
+    },
+    {
+      "icon": "/images/ikon/kepailitan.png",
+      "label": "Hukum Kepailitan"
+    },
+    {
+      "icon": "/images/ikon/medis-kesehatan.png",
+      "label": "Hukum Medis & Kesehatan"
+    },
+    {
+      "icon": "/images/ikon/real-estat.png",
+      "label": "Hukum Real Estat"
+    }
+  ],
+  "tim": [
+    {
+      "photo": "/images/tim/gilang.jpg",
+      "name": "Gilang Al Farizki Harman, S.H.",
+      "role": "Partner",
+      "bio": "Sebagai Founder Al Farizki & Zhafir Law Firm, Gilang memiliki pengalaman luas di bidang litigasi dan bantuan hukum. Ia meraih gelar Sarjana Hukum dari Universitas Brawijaya dengan fokus kuat pada hukum pidana. Perjalanan profesionalnya mencakup peran sebagai Kepala Divisi di YLBHI LBH Pos Malang (2022–2023) serta berpraktik di salah satu firma hukum terkemuka di Malang pada 2023–2025, menangani perkara kompleks di bidang litigasi komersial, perselisihan hubungan industrial, dan hukum pidana. Dengan pola pikir yang gigih, analitis, dan berorientasi penuh pada kepentingan klien, Gilang siap menghadirkan solusi hukum yang efektif dan berdampak."
+    },
+    {
+      "photo": "/images/tim/zhafir.jpg",
+      "name": "Zhafir Galang Arissaputra, S.H.",
+      "role": "Partner",
+      "bio": "Zhafir adalah Founder Al Farizki & Zhafir Law Firm, lulusan Fakultas Hukum Universitas Brawijaya dengan spesialisasi Hukum Pidana dan Hukum Perdata Bisnis. Ia memiliki pengalaman luas di organisasi bantuan hukum dan firma hukum ternama, termasuk YLBHI LBH Pos Malang (2022–2023) dan sebuah firma hukum terkemuka di Kota Malang (2023–2025). Keahliannya mencakup pembelaan perkara pidana, asuransi, hukum perusahaan, ketenagakerjaan, hingga hak asasi manusia. Dengan pendekatan yang strategis dan berpusat pada klien, Zhafir berkomitmen menghadirkan solusi hukum yang kuat dan berintegritas."
+    },
+    {
+      "photo": "/images/tim/arimbi.jpg",
+      "name": "Arimbi Gita Pramudya Wardani, S.H.",
+      "role": "Associate",
+      "bio": "Arimbi adalah Associate di Al Farizki & Zhafir Law Firm, lulusan Fakultas Hukum Universitas Muhammadiyah Malang. Praktiknya berfokus pada hukum pidana, hukum perdata, dan hukum perusahaan, didukung pengalaman profesional di berbagai firma hukum di Malang, Jawa Timur, serta kantor notaris di Badung, Bali. Dengan keahlian yang mencakup hukum pidana, hukum perusahaan, dan perizinan usaha, Arimbi mengedepankan pendekatan yang strategis, analitis, dan berorientasi solusi pada setiap perkara. Menjunjung standar profesionalisme tertinggi dan kepentingan klien, ia berkomitmen memberikan solusi hukum yang efektif, menyeluruh, dan bernilai tambah sesuai kebutuhan serta tujuan setiap klien."
+    },
+    {
+      "photo": "/images/tim/bayu.jpg",
+      "name": "Bayu Nando Prayoga, S.H.",
+      "role": "Junior Associate",
+      "bio": "Junior Associate di Al Farizki & Zhafir Law Firm, Nando menyelesaikan studi hukumnya di Universitas Brawijaya dengan fokus pada Hukum Administrasi Negara. Ia membawa pengalaman berharga di sektor non-litigasi dan bantuan hukum, menangani beragam perkara mulai dari perizinan usaha, prosedur administrasi, hingga hukum pertanahan dan agraria. Dengan pola pikir yang humanis, teliti, dan metodis, Nando berkomitmen penuh memberikan pendampingan hukum yang objektif dan efektif sesuai tujuan kliennya."
+    }
+  ],
+  "contoh_berita_placeholder": [
+    {
+      "tag": "Opini Hukum",
+      "title": "[Judul Artikel Opini Hukum]",
+      "excerpt": "[Ringkasan singkat artikel akan tampil di sini setelah dipublikasikan oleh admin.]",
+      "date": "[Tanggal Publikasi]"
+    },
+    {
+      "tag": "Berita",
+      "title": "[Judul Berita Kantor]",
+      "excerpt": "[Ringkasan singkat berita akan tampil di sini setelah dipublikasikan oleh admin.]",
+      "date": "[Tanggal Publikasi]"
+    },
+    {
+      "tag": "Legal Update",
+      "title": "[Judul Pembaruan Regulasi]",
+      "excerpt": "[Ringkasan singkat pembaruan akan tampil di sini setelah dipublikasikan oleh admin.]",
+      "date": "[Tanggal Publikasi]"
+    }
+  ]
+}

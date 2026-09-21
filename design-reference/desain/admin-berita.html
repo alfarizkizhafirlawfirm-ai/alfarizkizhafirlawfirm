@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kelola Berita (Admin) — Al Farizki &amp; Zhafir Law Firm (referensi desain)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap">
+  <style>
+    :root{
+      --navy-950:#0A1C36; --navy-900:#0F2545; --navy-800:#173B6C; --navy-100:#E7ECF3;
+      --gold:#B08D4F; --gold-light:#DCC28C; --paper:#F8F6F1; --ink:#181818;
+      --ink-soft:#57616D; --line:#DEDACE;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Work Sans',sans-serif;color:var(--ink);background:var(--paper);}
+    h1,h2,h3{font-family:'Playfair Display',serif;margin:0;}
+    a{color:inherit;text-decoration:none;}
+    button{font-family:'Work Sans',sans-serif;cursor:pointer;}
+    .row-hover:hover{background:#FAF8F3;}
+    .amp{font-family:'Work Sans',sans-serif;font-weight:600;}
+
+    /* TABLET */
+    @media (max-width: 1100px){
+      .abar{padding:0 22px !important;}
+      .konten{padding:30px 26px !important;}
+      .tbl-row{grid-template-columns:2.2fr 1fr 1fr 0.9fr 1fr !important;gap:12px !important;padding-left:20px !important;padding-right:20px !important;}
+      .statgrid{gap:14px !important;}
+    }
+
+    /* HP — susunan sama persis dengan laptop, hanya diperkecil */
+    @media (max-width: 760px){
+      .abar{padding:0 12px !important;height:44px !important;flex-basis:44px !important;}
+      .abar img{height:18px !important;}
+      .abar-kiri{gap:8px !important;}
+      .abar-kiri > span:last-child{font-size:8.5px !important;gap:4px !important;letter-spacing:0.5px !important;}
+      .abar-kiri svg{width:10px !important;height:10px !important;}
+      .abar-kanan{gap:9px !important;}
+      .abar-kanan a, .abar-kanan span{font-size:9px !important;}
+      .abar-kanan svg{width:11px !important;height:11px !important;}
+      .abar-kanan a{gap:4px !important;}
+      .abar-kanan > div{gap:5px !important;}
+      .avatar{width:22px !important;height:22px !important;font-size:8px !important;}
+
+      .konten{padding:18px 12px !important;}
+      .kepala{margin-bottom:16px !important;gap:10px !important;}
+      .remah{font-size:9px !important;margin-bottom:5px !important;}
+      .kepala h1{font-size:17px !important;}
+      .btn-tulis{font-size:10px !important;padding:9px 10px !important;gap:5px !important;white-space:nowrap;}
+      .btn-tulis svg{width:11px !important;height:11px !important;}
+
+      .statgrid{gap:6px !important;margin-bottom:18px !important;}
+      .statgrid > div{padding:10px 8px !important;}
+      .statgrid > div > div:first-child{font-size:17px !important;}
+      .statgrid > div > div:last-child{font-size:8px !important;line-height:1.3 !important;}
+
+      .tbl-atas{padding:10px 10px !important;}
+      .tbl-atas h2{font-size:12px !important;}
+      .tbl-atas span{font-size:8.5px !important;padding:4px 7px !important;}
+      .tbl-atas > div{gap:4px !important;}
+
+      .tbl-row{grid-template-columns:2.2fr 1fr 0.9fr 0.95fr 1.35fr !important;gap:5px !important;padding-left:10px !important;padding-right:10px !important;padding-top:10px !important;padding-bottom:10px !important;}
+      .tbl-row > span{font-size:7.5px !important;letter-spacing:0.3px !important;}
+      .tbl-row .judul{font-size:9px !important;}
+      .tbl-row .slug{font-size:7px !important;}
+      .tbl-row .status{font-size:7.5px !important;padding:3px 5px !important;}
+      .tbl-row .aksi{gap:3px !important;}
+      .tbl-row .aksi button{width:20px !important;height:20px !important;padding:0 !important;}
+      .tbl-row .aksi svg{width:10px !important;height:10px !important;}
+
+      .pager{padding:10px !important;}
+      .pager span{font-size:8.5px !important;}
+      .pager > div{gap:4px !important;}
+      .pager > div > span{padding:4px 6px !important;}
+    }
+  </style>
+</head>
+<body>
+<div style="width:100%;min-height:100vh;background:var(--paper);display:flex;flex-direction:column;">
+
+  <!-- ADMIN BAR -->
+  <div class="abar" style="height:52px;background:var(--navy-950);display:flex;align-items:center;justify-content:space-between;padding:0 32px;flex:0 0 52px;">
+    <div class="abar-kiri" style="display:flex;align-items:center;gap:18px;">
+      <img src="../public/images/logo-putih.png" alt="Al Farizki &amp; Zhafir Law Firm" style="height:26px;width:auto;display:block;">
+      <span style="width:1px;height:20px;background:rgba(255,255,255,0.2);"></span>
+      <span style="display:flex;align-items:center;gap:8px;font-size:12px;color:#B08D4F;font-weight:700;letter-spacing:1px;text-transform:uppercase;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        Mode Admin
+      </span>
+    </div>
+    <div class="abar-kanan" style="display:flex;align-items:center;gap:22px;">
+      <a href="beranda.html" style="display:flex;align-items:center;gap:7px;font-size:13px;color:#C9D3E0;font-weight:500;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        Lihat Website
+      </a>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="avatar" style="width:30px;height:30px;border-radius:50%;background:#B08D4F;color:var(--navy-950);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">GA</span>
+        <span style="font-size:13px;color:#FFFFFF;font-weight:500;">Gilang</span>
+      </div>
+      <a href="login.html" style="font-size:13px;color:#8FA0B8;font-weight:500;">Keluar</a>
+    </div>
+  </div>
+
+  <!-- KONTEN -->
+  <div class="konten" style="flex:1;width:100%;max-width:1440px;margin:0 auto;padding:38px 48px;">
+
+    <div class="kepala" style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:30px;gap:20px;">
+      <div style="min-width:0;">
+        <div class="remah" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-soft);margin-bottom:10px;">
+          <span>Dashboard</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"></path></svg>
+          <span style="color:var(--navy-900);font-weight:600;">Berita &amp; Opini</span>
+        </div>
+        <h1 style="font-size:32px;color:var(--navy-950);font-weight:700;">Kelola Berita <span class="amp">&amp;</span> Opini</h1>
+      </div>
+      <a href="tulis-berita.html" class="btn-tulis" style="display:flex;align-items:center;gap:9px;background:#B08D4F;color:var(--navy-950);font-size:14px;font-weight:700;padding:14px 26px;letter-spacing:0.3px;flex:0 0 auto;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"></path></svg>
+        Tulis Berita Baru
+      </a>
+    </div>
+
+    <!-- ringkasan -->
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);font-weight:600;">Ringkasan</span>
+      <span style="font-size:10.5px;background:var(--navy-100);color:var(--navy-800);padding:3px 9px;border-radius:10px;font-weight:600;">data contoh</span>
+    </div>
+    <div class="statgrid" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-bottom:38px;">
+      <div style="background:#FFFFFF;border:1px solid var(--line);padding:22px 24px;">
+        <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--navy-950);">12</div>
+        <div style="font-size:12.5px;color:var(--ink-soft);margin-top:4px;">Total artikel</div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid var(--line);padding:22px 24px;">
+        <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#2E7D5B;">9</div>
+        <div style="font-size:12.5px;color:var(--ink-soft);margin-top:4px;">Terbit</div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid var(--line);padding:22px 24px;">
+        <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#B08D4F;">3</div>
+        <div style="font-size:12.5px;color:var(--ink-soft);margin-top:4px;">Draf belum terbit</div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid var(--line);padding:22px 24px;">
+        <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--navy-950);">1.248</div>
+        <div style="font-size:12.5px;color:var(--ink-soft);margin-top:4px;">Pembaca 30 hari terakhir</div>
+      </div>
+    </div>
+
+    <!-- tabel artikel -->
+    <div style="background:#FFFFFF;border:1px solid var(--line);">
+      <div class="tbl-atas" style="display:flex;align-items:center;justify-content:space-between;padding:20px 26px;border-bottom:1px solid var(--line);gap:12px;">
+        <h2 style="font-size:17px;color:var(--navy-950);font-weight:700;">Daftar Artikel</h2>
+        <div style="display:flex;gap:10px;">
+          <span style="font-size:12px;font-weight:600;padding:7px 14px;background:#173B6C;color:#FFFFFF;">Semua</span>
+          <span style="font-size:12px;font-weight:600;padding:7px 14px;border:1px solid var(--line);color:var(--navy-900);">Terbit</span>
+          <span style="font-size:12px;font-weight:600;padding:7px 14px;border:1px solid var(--line);color:var(--navy-900);">Draf</span>
+        </div>
+      </div>
+
+      <div class="tbl-row" style="display:grid;grid-template-columns:2.6fr 1fr 1fr 0.9fr 1fr;gap:16px;padding:14px 26px;background:#FBFAF6;border-bottom:1px solid var(--line);">
+        <span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);font-weight:700;">Judul</span>
+        <span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);font-weight:700;">Kategori</span>
+        <span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);font-weight:700;">Penulis</span>
+        <span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);font-weight:700;">Status</span>
+        <span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);font-weight:700;text-align:right;">Aksi</span>
+      </div>
+
+      
+        <div class="row-hover tbl-row" style="display:grid;grid-template-columns:2.6fr 1fr 1fr 0.9fr 1fr;gap:16px;padding:18px 26px;border-bottom:1px solid var(--line);align-items:center;">
+          <div style="min-width:0;">
+            <div class="judul" style="font-size:14px;color:var(--navy-950);font-weight:600;line-height:1.4;">Karyawan Di-PHK Sepihak: Langkah Hukum yang Bisa Diambil</div>
+            <div class="slug" style="font-size:11.5px;color:#98A2AE;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">/berita/phk-sepihak-langkah-hukum</div>
+          </div>
+          <span style="font-size:12.5px;color:var(--ink-soft);">Opini Hukum</span>
+          <span style="font-size:12.5px;color:var(--ink-soft);">Gilang</span>
+          <span class="status" style="font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:12px;justify-self:start;background:#E3F1EA;color:#2E7D5B;">Terbit</span>
+          <div class="aksi" style="display:flex;gap:8px;justify-content:flex-end;">
+            <button aria-label="Edit artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button aria-label="Lihat artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" stroke-width="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+            <button aria-label="Hapus artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B4443C" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"></path></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div class="row-hover tbl-row" style="display:grid;grid-template-columns:2.6fr 1fr 1fr 0.9fr 1fr;gap:16px;padding:18px 26px;border-bottom:1px solid var(--line);align-items:center;">
+          <div style="min-width:0;">
+            <div class="judul" style="font-size:14px;color:var(--navy-950);font-weight:600;line-height:1.4;">Sertifikat Tanah Ganda: Siapa yang Berhak atas Tanahnya?</div>
+            <div class="slug" style="font-size:11.5px;color:#98A2AE;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">/berita/sertifikat-tanah-ganda</div>
+          </div>
+          <span style="font-size:12.5px;color:var(--ink-soft);">Opini Hukum</span>
+          <span style="font-size:12.5px;color:var(--ink-soft);">Bayu Nando</span>
+          <span class="status" style="font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:12px;justify-self:start;background:#E3F1EA;color:#2E7D5B;">Terbit</span>
+          <div class="aksi" style="display:flex;gap:8px;justify-content:flex-end;">
+            <button aria-label="Edit artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button aria-label="Lihat artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" stroke-width="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+            <button aria-label="Hapus artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B4443C" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"></path></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div class="row-hover tbl-row" style="display:grid;grid-template-columns:2.6fr 1fr 1fr 0.9fr 1fr;gap:16px;padding:18px 26px;border-bottom:1px solid var(--line);align-items:center;">
+          <div style="min-width:0;">
+            <div class="judul" style="font-size:14px;color:var(--navy-950);font-weight:600;line-height:1.4;">Somasi: Kapan Perlu Dikirim dan Apa Akibat Hukumnya</div>
+            <div class="slug" style="font-size:11.5px;color:#98A2AE;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">/berita/somasi-kapan-perlu-dikirim</div>
+          </div>
+          <span style="font-size:12.5px;color:var(--ink-soft);">Legal Update</span>
+          <span style="font-size:12.5px;color:var(--ink-soft);">Zhafir</span>
+          <span class="status" style="font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:12px;justify-self:start;background:#F6EEDD;color:#8A6A2F;">Draf</span>
+          <div class="aksi" style="display:flex;gap:8px;justify-content:flex-end;">
+            <button aria-label="Edit artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button aria-label="Lihat artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" stroke-width="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+            <button aria-label="Hapus artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B4443C" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"></path></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div class="row-hover tbl-row" style="display:grid;grid-template-columns:2.6fr 1fr 1fr 0.9fr 1fr;gap:16px;padding:18px 26px;border-bottom:1px solid var(--line);align-items:center;">
+          <div style="min-width:0;">
+            <div class="judul" style="font-size:14px;color:var(--navy-950);font-weight:600;line-height:1.4;">Membeli Rumah Second: Dokumen yang Wajib Dicek Sebelum Transaksi</div>
+            <div class="slug" style="font-size:11.5px;color:#98A2AE;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">/berita/cek-dokumen-beli-rumah-second</div>
+          </div>
+          <span style="font-size:12.5px;color:var(--ink-soft);">Opini Hukum</span>
+          <span style="font-size:12.5px;color:var(--ink-soft);">Arimbi</span>
+          <span class="status" style="font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:12px;justify-self:start;background:#E3F1EA;color:#2E7D5B;">Terbit</span>
+          <div class="aksi" style="display:flex;gap:8px;justify-content:flex-end;">
+            <button aria-label="Edit artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button aria-label="Lihat artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" stroke-width="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+            <button aria-label="Hapus artikel" style="width:32px;height:32px;border:1px solid var(--line);background:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B4443C" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"></path></svg>
+            </button>
+          </div>
+        </div>
+      
+
+      <div class="pager" style="padding:16px 26px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:12.5px;color:var(--ink-soft);">Menampilkan 4 dari 12 artikel</span>
+        <div style="display:flex;gap:8px;">
+          <span style="font-size:12.5px;padding:7px 13px;border:1px solid var(--line);color:var(--ink-soft);">Sebelumnya</span>
+          <span style="font-size:12.5px;padding:7px 13px;background:#173B6C;color:#FFFFFF;font-weight:600;">1</span>
+          <span style="font-size:12.5px;padding:7px 13px;border:1px solid var(--line);color:var(--navy-900);">2</span>
+          <span style="font-size:12.5px;padding:7px 13px;border:1px solid var(--line);color:var(--navy-900);">Berikutnya</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
