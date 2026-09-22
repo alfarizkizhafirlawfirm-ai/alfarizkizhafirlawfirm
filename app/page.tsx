@@ -1,9 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import konten from "../design-reference/konten.json";
+import { createClient } from '@/utils/supabase/server'
+import { formatDate } from '@/utils/date'
 
-export default function Home() {
-  return (
+export default async function Home() {
+  const supabase = await createClient()
+  const { data: articles } = await supabase
+    .from('articles')
+    .select('*')
+    .eq('status', 'published')
+    .order('created_at', { ascending: false })
+    .limit(3)
+    
+  const latestArticle = articles && articles.length > 0 ? articles[0] : null
+  const otherArticles = articles && articles.length > 1 ? articles.slice(1) : []
     <>
       <div
         style={{
@@ -2737,7 +2748,7 @@ export default function Home() {
                 marginBottom: "34px",
               }}
             >
-              <button
+              <Link href="/berita"
                 style={{
                   fontSize: "12.5px",
                   fontWeight: "600",
@@ -2745,389 +2756,244 @@ export default function Home() {
                   borderRadius: "20px",
                   background: "#173B6C",
                   color: "#FFFFFF",
+                  textDecoration: "none"
                 }}
               >
-                Semua
-              </button>
-              <button
-                style={{
-                  fontSize: "12.5px",
-                  fontWeight: "600",
-                  padding: "9px 18px",
-                  borderRadius: "20px",
-                  background: "#FFFFFF",
-                  border: "1px solid var(--line)",
-                  color: "var(--navy-900)",
-                }}
-              >
-                Opini Hukum
-              </button>
-              <button
-                style={{
-                  fontSize: "12.5px",
-                  fontWeight: "600",
-                  padding: "9px 18px",
-                  borderRadius: "20px",
-                  background: "#FFFFFF",
-                  border: "1px solid var(--line)",
-                  color: "var(--navy-900)",
-                }}
-              >
-                Berita Kantor
-              </button>
-              <button
-                style={{
-                  fontSize: "12.5px",
-                  fontWeight: "600",
-                  padding: "9px 18px",
-                  borderRadius: "20px",
-                  background: "#FFFFFF",
-                  border: "1px solid var(--line)",
-                  color: "var(--navy-900)",
-                }}
-              >
-                Legal Update
-              </button>
+                Lihat Semua
+              </Link>
             </div>
 
-            <div
-              className="berita-row"
-              style={{
-                display: "flex",
-                gap: "28px",
-                flexWrap: "wrap",
-                alignItems: "stretch",
-              }}
-            >
+            {articles && articles.length > 0 ? (
               <div
-                className="card-lift"
+                className="berita-row"
                 style={{
-                  flex: "1 1 560px",
-                  minWidth: "320px",
-                  background: "#FFFFFF",
-                  border: "1px solid var(--line)",
-                  position: "relative",
                   display: "flex",
-                  flexDirection: "column",
+                  gap: "28px",
+                  flexWrap: "wrap",
+                  alignItems: "stretch",
                 }}
               >
-                <div
-                  style={{
-                    height: "260px",
-                    background:
-                      "linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                >
-                  <img
-                    src="/images/motif-kincir.png"
-                    alt=""
-                    aria-hidden="true"
+                {/* Artikel Utama */}
+                {latestArticle && (
+                  <div
+                    className="card-lift"
                     style={{
-                      position: "absolute",
-                      right: "-40px",
-                      bottom: "-30px",
-                      width: "240px",
-                      opacity: "0.3",
-                    }}
-                  />
-                  <span
-                    style={{
-                      fontSize: "12px",
-                      color: "rgba(255,255,255,0.65)",
-                      letterSpacing: "1px",
+                      flex: "1 1 560px",
+                      minWidth: "320px",
+                      background: "#FFFFFF",
+                      border: "1px solid var(--line)",
                       position: "relative",
+                      display: "flex",
+                      flexDirection: "column",
                     }}
                   >
-                    [GAMBAR SAMPUL ARTIKEL]
-                  </span>
-                </div>
-                <div style={{ padding: "30px 32px 34px", flex: "1" }}>
+                    <Link href={`/berita/${latestArticle.slug}`} style={{textDecoration: "none", color: "inherit", display: "flex", flexDirection: "column", flex: 1}}>
+                      <div
+                        style={{
+                          height: "260px",
+                          background: latestArticle.cover_url ? `url(${latestArticle.cover_url}) center/cover no-repeat` : "linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          position: "relative",
+                          overflow: "hidden",
+                        }}
+                      >
+                        {!latestArticle.cover_url && (
+                          <>
+                            <img
+                              src="/images/motif-kincir.png"
+                              alt=""
+                              aria-hidden="true"
+                              style={{
+                                position: "absolute",
+                                right: "-40px",
+                                bottom: "-30px",
+                                width: "240px",
+                                opacity: "0.3",
+                              }}
+                            />
+                            <span
+                              style={{
+                                fontSize: "12px",
+                                color: "rgba(255,255,255,0.65)",
+                                letterSpacing: "1px",
+                                position: "relative",
+                                textTransform: "uppercase"
+                              }}
+                            >
+                              {latestArticle.category}
+                            </span>
+                          </>
+                        )}
+                      </div>
+                      <div style={{ padding: "30px 32px 34px", flex: "1", display: "flex", flexDirection: "column" }}>
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "10px",
+                            marginBottom: "12px",
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontSize: "10.5px",
+                              letterSpacing: "1px",
+                              color: "#FFFFFF",
+                              background: "#B08D4F",
+                              padding: "4px 10px",
+                              textTransform: "uppercase",
+                              fontWeight: "700",
+                            }}
+                          >
+                            Terkini
+                          </span>
+                          <span
+                            style={{
+                              fontSize: "11px",
+                              letterSpacing: "1px",
+                              color: "#B08D4F",
+                              textTransform: "uppercase",
+                              fontWeight: "700",
+                            }}
+                          >
+                            {latestArticle.category}
+                          </span>
+                        </div>
+                        <h3
+                          style={{
+                            fontSize: "24px",
+                            color: "var(--navy-950)",
+                            fontWeight: "700",
+                            marginBottom: "12px",
+                            lineHeight: "1.35",
+                          }}
+                        >
+                          {latestArticle.title}
+                        </h3>
+                        <p
+                          style={{
+                            fontSize: "14.5px",
+                            lineHeight: "1.75",
+                            color: "var(--ink-soft)",
+                            marginBottom: "20px",
+                          }}
+                        >
+                          {latestArticle.seo_description || (latestArticle.content.replace(/<[^>]+>/g, '').substring(0, 150) + '...')}
+                        </p>
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "14px",
+                            fontSize: "12px",
+                            color: "#98A2AE",
+                            marginTop: "auto"
+                          }}
+                        >
+                          <span>{latestArticle.author}</span>
+                          <span>·</span>
+                          <span>{formatDate(latestArticle.created_at)}</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                )}
+
+                {/* Artikel Lainnya */}
+                {otherArticles.length > 0 && (
                   <div
                     style={{
+                      flex: "1 1 380px",
+                      minWidth: "300px",
                       display: "flex",
-                      alignItems: "center",
-                      gap: "10px",
-                      marginBottom: "12px",
+                      flexDirection: "column",
+                      gap: "18px",
                     }}
                   >
-                    <span
-                      style={{
-                        fontSize: "10.5px",
-                        letterSpacing: "1px",
-                        color: "#FFFFFF",
-                        background: "#B08D4F",
-                        padding: "4px 10px",
-                        textTransform: "uppercase",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Artikel Utama
-                    </span>
-                    <span
-                      style={{
-                        fontSize: "11px",
-                        letterSpacing: "1px",
-                        color: "#B08D4F",
-                        textTransform: "uppercase",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Opini Hukum
-                    </span>
+                    {otherArticles.map((article: any) => (
+                      <Link href={`/berita/${article.slug}`} key={article.id} style={{textDecoration: "none", color: "inherit"}}>
+                        <div
+                          className="card-lift"
+                          style={{
+                            background: "#FFFFFF",
+                            border: "1px solid var(--line)",
+                            padding: "22px 24px",
+                            position: "relative",
+                            display: "flex",
+                            gap: "16px",
+                            alignItems: "flex-start",
+                          }}
+                        >
+                          <div
+                            className="ikon-berita"
+                            style={{
+                              flex: "0 0 58px",
+                              height: "58px",
+                              background: article.cover_url ? `url(${article.cover_url}) center/cover no-repeat` : "var(--navy-100)",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              overflow: "hidden"
+                            }}
+                          >
+                            {!article.cover_url && (
+                              <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="var(--navy-700)"
+                                strokeWidth="1.3"
+                              >
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                              </svg>
+                            )}
+                          </div>
+                          <div style={{ flex: "1" }}>
+                            <span
+                              style={{
+                                fontSize: "10.5px",
+                                letterSpacing: "1px",
+                                color: "#B08D4F",
+                                textTransform: "uppercase",
+                                fontWeight: "700",
+                              }}
+                            >
+                              {article.category}
+                            </span>
+                            <h3
+                              style={{
+                                fontSize: "15.5px",
+                                color: "var(--navy-950)",
+                                fontWeight: "700",
+                                margin: "7px 0 7px",
+                                lineHeight: "1.4",
+                              }}
+                            >
+                              {article.title}
+                            </h3>
+                            <span style={{ fontSize: "11.5px", color: "#98A2AE" }}>
+                              {formatDate(article.created_at)}
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
-                  <h3
-                    style={{
-                      fontSize: "24px",
-                      color: "var(--navy-950)",
-                      fontWeight: "700",
-                      marginBottom: "12px",
-                      lineHeight: "1.35",
-                    }}
-                  >
-                    [Judul Artikel Utama Anda]
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: "14.5px",
-                      lineHeight: "1.75",
-                      color: "var(--ink-soft)",
-                      marginBottom: "20px",
-                    }}
-                  >
-                    [Ringkasan artikel akan tampil di sini. Bagian ini cocok
-                    untuk membahas isu hukum terkini yang sering ditanyakan
-                    klien, sehingga website juga membantu ditemukan lewat
-                    pencarian Google.]
-                  </p>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "14px",
-                      fontSize: "12px",
-                      color: "#98A2AE",
-                    }}
-                  >
-                    <span>[Nama Penulis]</span>
-                    <span>·</span>
-                    <span>[Tanggal Publikasi]</span>
-                    <span>·</span>
-                    <span>5 menit baca</span>
-                  </div>
-                </div>
+                )}
               </div>
+            ) : (
+              <p style={{fontSize: "14px", color: "var(--ink-soft)", fontStyle: "italic"}}>Belum ada artikel yang diterbitkan.</p>
+            )}
 
-              <div
-                style={{
-                  flex: "1 1 380px",
-                  minWidth: "300px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "18px",
-                }}
-              >
-                <div
-                  className="card-lift"
-                  style={{
-                    background: "#FFFFFF",
-                    border: "1px solid var(--line)",
-                    padding: "22px 24px",
-                    position: "relative",
-                    display: "flex",
-                    gap: "16px",
-                    alignItems: "flex-start",
-                  }}
-                >
-                  <div
-                    className="ikon-berita"
-                    style={{
-                      flex: "0 0 58px",
-                      height: "58px",
-                      background: "var(--navy-100)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="var(--navy-700)"
-                      strokeWidth="1.3"
-                    >
-                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                    </svg>
-                  </div>
-                  <div style={{ flex: "1" }}>
-                    <span
-                      style={{
-                        fontSize: "10.5px",
-                        letterSpacing: "1px",
-                        color: "#B08D4F",
-                        textTransform: "uppercase",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Opini Hukum
-                    </span>
-                    <h3
-                      style={{
-                        fontSize: "15.5px",
-                        color: "var(--navy-950)",
-                        fontWeight: "700",
-                        margin: "7px 0 7px",
-                        lineHeight: "1.4",
-                      }}
-                    >
-                      [Judul Artikel Opini Hukum]
-                    </h3>
-                    <span style={{ fontSize: "11.5px", color: "#98A2AE" }}>
-                      [Tanggal Publikasi]
-                    </span>
-                  </div>
-                </div>
 
-                <div
-                  className="card-lift"
-                  style={{
-                    background: "#FFFFFF",
-                    border: "1px solid var(--line)",
-                    padding: "22px 24px",
-                    position: "relative",
-                    display: "flex",
-                    gap: "16px",
-                    alignItems: "flex-start",
-                  }}
-                >
-                  <div
-                    className="ikon-berita"
-                    style={{
-                      flex: "0 0 58px",
-                      height: "58px",
-                      background: "var(--navy-100)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="var(--navy-700)"
-                      strokeWidth="1.3"
-                    >
-                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                    </svg>
-                  </div>
-                  <div style={{ flex: "1" }}>
-                    <span
-                      style={{
-                        fontSize: "10.5px",
-                        letterSpacing: "1px",
-                        color: "#B08D4F",
-                        textTransform: "uppercase",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Berita
-                    </span>
-                    <h3
-                      style={{
-                        fontSize: "15.5px",
-                        color: "var(--navy-950)",
-                        fontWeight: "700",
-                        margin: "7px 0 7px",
-                        lineHeight: "1.4",
-                      }}
-                    >
-                      [Judul Berita Kantor]
-                    </h3>
-                    <span style={{ fontSize: "11.5px", color: "#98A2AE" }}>
-                      [Tanggal Publikasi]
-                    </span>
-                  </div>
-                </div>
-
-                <div
-                  className="card-lift"
-                  style={{
-                    background: "#FFFFFF",
-                    border: "1px solid var(--line)",
-                    padding: "22px 24px",
-                    position: "relative",
-                    display: "flex",
-                    gap: "16px",
-                    alignItems: "flex-start",
-                  }}
-                >
-                  <div
-                    className="ikon-berita"
-                    style={{
-                      flex: "0 0 58px",
-                      height: "58px",
-                      background: "var(--navy-100)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="var(--navy-700)"
-                      strokeWidth="1.3"
-                    >
-                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                    </svg>
-                  </div>
-                  <div style={{ flex: "1" }}>
-                    <span
-                      style={{
-                        fontSize: "10.5px",
-                        letterSpacing: "1px",
-                        color: "#B08D4F",
-                        textTransform: "uppercase",
-                        fontWeight: "700",
-                      }}
-                    >
-                      Legal Update
-                    </span>
-                    <h3
-                      style={{
-                        fontSize: "15.5px",
-                        color: "var(--navy-950)",
-                        fontWeight: "700",
-                        margin: "7px 0 7px",
-                        lineHeight: "1.4",
-                      }}
-                    >
-                      [Judul Pembaruan Regulasi]
-                    </h3>
-                    <span style={{ fontSize: "11.5px", color: "#98A2AE" }}>
-                      [Tanggal Publikasi]
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <div style={{ textAlign: "center", marginTop: "44px" }}>
-              <a
-                href="#berita"
+              <Link
+                href="/berita"
                 className="btn-lift"
                 style={{
                   display: "inline-block",
@@ -3138,10 +3004,11 @@ export default function Home() {
                   padding: "14px 34px",
                   borderRadius: "2px",
                   letterSpacing: "0.3px",
+                  textDecoration: "none"
                 }}
               >
                 Lihat Semua Berita &amp; Opini
-              </a>
+              </Link>
             </div>
           </div>
         </div>
