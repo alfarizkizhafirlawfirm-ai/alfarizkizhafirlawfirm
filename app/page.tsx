@@ -15,6 +15,8 @@ export default async function Home() {
     
   const latestArticle = articles && articles.length > 0 ? articles[0] : null
   const otherArticles = articles && articles.length > 1 ? articles.slice(1) : []
+
+  return (
     <>
       <div
         style={{
