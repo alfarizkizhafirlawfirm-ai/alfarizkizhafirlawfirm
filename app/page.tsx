@@ -18,6 +18,28 @@ export default async function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LegalService",
+            "name": "Al Farizki & Zhafir Law Firm",
+            "image": "http://localhost:3000/images/logo.png",
+            "@id": "",
+            "url": "http://localhost:3000/",
+            "telephone": "+6285941862969",
+            "email": "alfarizkizhafirlawfirm@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Lowokwaru",
+              "addressLocality": "Kota Malang",
+              "addressRegion": "Jawa Timur",
+              "addressCountry": "ID"
+            }
+          })
+        }}
+      />
       <div
         style={{
           width: "100%",

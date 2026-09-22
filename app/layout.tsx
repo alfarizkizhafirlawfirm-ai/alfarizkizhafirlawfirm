@@ -17,8 +17,18 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Al Farizki & Zhafir Law Firm — Firma Hukum di Malang",
-  description: "Firma Hukum Berbasis di Malang, Melayani Seluruh Indonesia",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  title: {
+    default: "Al Farizki & Zhafir Law Firm — Firma Hukum di Malang",
+    template: "%s | Al Farizki & Zhafir Law Firm"
+  },
+  description: "Firma Hukum Berbasis di Malang, Melayani Seluruh Indonesia, menyediakan layanan litigasi dan non-litigasi dengan pendekatan preventif, profesional, dan berintegritas.",
+  openGraph: {
+    type: 'website',
+    locale: 'id_ID',
+    url: '/',
+    siteName: 'Al Farizki & Zhafir Law Firm',
+  }
 };
 
 export default function RootLayout({
