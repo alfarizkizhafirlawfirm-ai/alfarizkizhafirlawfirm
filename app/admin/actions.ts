@@ -46,18 +46,18 @@ export async function saveArticle(formData: FormData) {
     slug = slug.replace(/^\/berita\//, '')
   }
 
-  let image_url = null
+  let cover_url = null
   if (image && image.size > 0) {
     const fileExt = image.name.split('.').pop()
     const fileName = `${Math.random().toString(36).substring(2)}.${fileExt}`
     
-    // We upload to 'images' bucket. Make sure the user has created it in Supabase!
-    const { error: uploadError } = await supabase.storage.from('images').upload(fileName, image)
+    // We upload to 'sampul-berita' bucket.
+    const { error: uploadError } = await supabase.storage.from('sampul-berita').upload(fileName, image)
     if (uploadError) {
-      console.error("Gagal mengunggah gambar. Pastikan bucket 'images' sudah dibuat dan public di Supabase.", uploadError)
+      console.error("Gagal mengunggah gambar.", uploadError)
     } else {
-      const { data: publicUrlData } = supabase.storage.from('images').getPublicUrl(fileName)
-      image_url = publicUrlData.publicUrl
+      const { data: publicUrlData } = supabase.storage.from('sampul-berita').getPublicUrl(fileName)
+      cover_url = publicUrlData.publicUrl
     }
   }
 
@@ -67,10 +67,10 @@ export async function saveArticle(formData: FormData) {
     author,
     content,
     seo_title,
-    seo_desc,
+    seo_description: seo_desc,
     slug,
     status,
-    image_url
+    cover_url
   })
 
   if (error) throw error
