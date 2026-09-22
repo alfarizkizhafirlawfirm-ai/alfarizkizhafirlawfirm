@@ -36,6 +36,7 @@ export async function saveArticle(formData: FormData) {
   const seo_desc = formData.get('seo_desc') as string
   let slug = formData.get('slug') as string
   const status = formData.get('status') as string
+  const image = formData.get('image') as File | null
 
   // basic slugification if empty
   if (!slug) {
@@ -43,6 +44,21 @@ export async function saveArticle(formData: FormData) {
   } else {
     // remove /berita/ if they typed it
     slug = slug.replace(/^\/berita\//, '')
+  }
+
+  let image_url = null
+  if (image && image.size > 0) {
+    const fileExt = image.name.split('.').pop()
+    const fileName = `${Math.random().toString(36).substring(2)}.${fileExt}`
+    
+    // We upload to 'images' bucket. Make sure the user has created it in Supabase!
+    const { error: uploadError } = await supabase.storage.from('images').upload(fileName, image)
+    if (uploadError) {
+      console.error("Gagal mengunggah gambar. Pastikan bucket 'images' sudah dibuat dan public di Supabase.", uploadError)
+    } else {
+      const { data: publicUrlData } = supabase.storage.from('images').getPublicUrl(fileName)
+      image_url = publicUrlData.publicUrl
+    }
   }
 
   const { error } = await supabase.from('articles').insert({
@@ -53,7 +69,8 @@ export async function saveArticle(formData: FormData) {
     seo_title,
     seo_desc,
     slug,
-    status
+    status,
+    image_url
   })
 
   if (error) throw error

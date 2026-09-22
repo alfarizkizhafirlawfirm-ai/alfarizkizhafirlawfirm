@@ -12,6 +12,7 @@ export default function NewArticle() {
   const [slug, setSlug] = useState('/berita/phk-sepihak-langkah-hukum')
   const [content, setContent] = useState('<p>PHK sepihak adalah pemutusan hubungan kerja yang dilakukan tanpa memenuhi prosedur yang diatur undang-undang. Dalam praktiknya, pekerja sering menerima pemberitahuan mendadak tanpa penjelasan alasan yang sah.</p><p>Artikel ini membahas apa yang bisa dilakukan pekerja, mulai dari mencatat bukti, mengajukan perundingan bipartit, hingga langkah ke pengadilan hubungan industrial apabila perundingan gagal.</p>')
   const [status, setStatus] = useState('draft') // 'draft' or 'published'
+  const [imagePreview, setImagePreview] = useState<string | null>(null)
 
   // auto slug
   useEffect(() => {
@@ -62,16 +63,35 @@ export default function NewArticle() {
 
           <div className="kartu" style={{background: "#FFFFFF", border: "1px solid var(--line)", padding: "26px 28px"}}>
             <span style={{display: "block", fontSize: "12px", fontWeight: 700, color: "var(--navy-900)", marginBottom: "10px", letterSpacing: "0.5px", textTransform: "uppercase"}}>Gambar Sampul</span>
-            <div className="unggah" style={{border: "1.5px dashed #C7BFA9", padding: "26px", display: "flex", alignItems: "center", gap: "18px"}}>
-              <span style={{width: "52px", height: "52px", background: "var(--navy-100)", display: "flex", alignItems: "center", justifyContent: "center"}}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-700)" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>
-              </span>
-              <div style={{flex: 1}}>
-                <div style={{fontSize: "13.5px", color: "var(--navy-900)", fontWeight: 600}}>Seret gambar ke sini atau pilih dari komputer</div>
-                <div style={{fontSize: "12px", color: "var(--ink-soft)", marginTop: "3px"}}>JPG atau PNG, disarankan 1200 &times; 630 piksel</div>
-              </div>
-              <button type="button" style={{fontSize: "13px", fontWeight: 600, padding: "11px 20px", border: "1px solid #173B6C", background: "#FFFFFF", color: "#173B6C", cursor: "pointer"}}>Pilih File</button>
-            </div>
+            
+            <input type="file" id="image" name="image" accept="image/*" onChange={(e) => {
+              const file = e.target.files?.[0]
+              if (file) {
+                setImagePreview(URL.createObjectURL(file))
+              } else {
+                setImagePreview(null)
+              }
+            }} style={{display: 'none'}} />
+            
+            <label htmlFor="image" className="unggah" style={{border: "1.5px dashed #C7BFA9", padding: "26px", display: "flex", alignItems: "center", gap: "18px", cursor: "pointer", position: "relative", overflow: "hidden", background: imagePreview ? '#000' : 'transparent', minHeight: "130px"}}>
+              {imagePreview ? (
+                <>
+                  <img src={imagePreview} alt="Preview" style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8}} />
+                  <span style={{position: 'relative', zIndex: 1, color: '#FFFFFF', fontSize: '13px', fontWeight: 600, background: 'rgba(0,0,0,0.5)', padding: '6px 12px', borderRadius: '4px'}}>Ubah Gambar</span>
+                </>
+              ) : (
+                <>
+                  <span style={{width: "52px", height: "52px", background: "var(--navy-100)", display: "flex", alignItems: "center", justifyContent: "center"}}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-700)" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>
+                  </span>
+                  <div style={{flex: 1}}>
+                    <div style={{fontSize: "13.5px", color: "var(--navy-900)", fontWeight: 600}}>Klik untuk mengunggah gambar dari komputer</div>
+                    <div style={{fontSize: "12px", color: "var(--ink-soft)", marginTop: "3px"}}>JPG atau PNG, disarankan 1200 &times; 630 piksel</div>
+                  </div>
+                  <span style={{fontSize: "13px", fontWeight: 600, padding: "11px 20px", border: "1px solid #173B6C", background: "#FFFFFF", color: "#173B6C"}}>Pilih File</span>
+                </>
+              )}
+            </label>
           </div>
 
           <TiptapEditor content={content} onChange={setContent} />
