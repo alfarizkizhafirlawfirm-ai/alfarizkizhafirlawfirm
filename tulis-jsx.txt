@@ -1,0 +1,151 @@
+
+<div style={{"width":"100%","minHeight":"100vh","background":"var(--paper)","display":"flex","flexDirection":"column"}}>
+
+  
+  <div className="abar" style={{"height":"52px","background":"var(--navy-950)","display":"flex","alignItems":"center","justifyContent":"space-between","padding":"0 32px","flex":"0 0 52px"}}>
+    <div className="abar-kiri" style={{"display":"flex","alignItems":"center","gap":"18px"}}>
+      <img src="/images/logo-putih.png" alt="Al Farizki &amp; Zhafir Law Firm" style={{"height":"26px","width":"auto","display":"block"}} />
+      <span style={{"width":"1px","height":"20px","background":"rgba(255,255,255,0.2)"}}></span>
+      <span style={{"fontSize":"12px","color":"#B08D4F","fontWeight":"700","letterSpacing":"1px","textTransform":"uppercase"}}>Mode Admin</span>
+    </div>
+    <div className="abar-kanan" style={{"display":"flex","alignItems":"center","gap":"22px"}}>
+      <a href="admin-berita.html" style={{"fontSize":"13px","color":"#C9D3E0","fontWeight":"500"}}>&larr; Kembali ke daftar artikel</a>
+      <span style={{"display":"flex","alignItems":"center","gap":"10px"}}>
+        <span className="avatar" style={{"width":"30px","height":"30px","borderRadius":"50%","background":"#B08D4F","color":"var(--navy-950)","display":"flex","alignItems":"center","justifyContent":"center","fontSize":"12px","fontWeight":"700"}}>GA</span>
+        <span style={{"fontSize":"13px","color":"#FFFFFF","fontWeight":"500"}}>Gilang</span>
+      </span>
+    </div>
+  </div>
+
+  <div className="badan" style={{"flex":"1","width":"100%","maxWidth":"1440px","margin":"0 auto","padding":"34px 48px","display":"flex","gap":"30px"}}>
+
+    
+    <div className="editor" style={{"flex":"1","display":"flex","flexDirection":"column","gap":"20px","minWidth":"0"}}>
+
+      <div>
+        <h1 style={{"fontSize":"28px","color":"var(--navy-950)","fontWeight":"700","marginBottom":"6px"}}>Tulis Berita / Opini Baru</h1>
+        <p style={{"fontSize":"13.5px","color":"var(--ink-soft)"}}>Artikel yang diterbitkan langsung muncul di halaman Berita website, tanpa mengubah kode.</p>
+      </div>
+
+      <div className="kartu" style={{"background":"#FFFFFF","border":"1px solid var(--line)","padding":"26px 28px"}}>
+        <label htmlFor="judul" style={{"display":"block","fontSize":"12px","fontWeight":"700","color":"var(--navy-900)","marginBottom":"8px","letterSpacing":"0.5px","textTransform":"uppercase"}}>Judul Artikel</label>
+        <input id="judul" type="text" value="Karyawan Di-PHK Sepihak: Langkah Hukum yang Bisa Diambil" style={{"width":"100%","height":"52px","padding":"0 16px","fontSize":"17px","fontWeight":"600","color":"var(--navy-950)","border":"1px solid var(--line)","background":"#FFFFFF"}} />
+
+        <div className="dua-kolom" style={{"display":"flex","gap":"18px","marginTop":"20px"}}>
+          <div style={{"flex":"1","minWidth":"0"}}>
+            <label htmlFor="kategori" style={{"display":"block","fontSize":"12px","fontWeight":"700","color":"var(--navy-900)","marginBottom":"8px","letterSpacing":"0.5px","textTransform":"uppercase"}}>Kategori</label>
+            <select id="kategori" style={{"width":"100%","height":"44px","padding":"0 12px","fontSize":"14px","border":"1px solid var(--line)","background":"#FFFFFF","color":"var(--ink)"}}>
+              <option>Opini Hukum</option>
+              <option>Berita Kantor</option>
+              <option>Legal Update</option>
+            </select>
+          </div>
+          <div style={{"flex":"1","minWidth":"0"}}>
+            <label htmlFor="penulis" style={{"display":"block","fontSize":"12px","fontWeight":"700","color":"var(--navy-900)","marginBottom":"8px","letterSpacing":"0.5px","textTransform":"uppercase"}}>Penulis</label>
+            <select id="penulis" style={{"width":"100%","height":"44px","padding":"0 12px","fontSize":"14px","border":"1px solid var(--line)","background":"#FFFFFF","color":"var(--ink)"}}>
+              <option>Gilang Al Farizki Harman, S.H.</option>
+              <option>Zhafir Galang Arissaputra, S.H.</option>
+              <option>Arimbi Gita Pramudya Wardani, S.H.</option>
+              <option>Bayu Nando Prayoga, S.H.</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div className="kartu" style={{"background":"#FFFFFF","border":"1px solid var(--line)","padding":"26px 28px"}}>
+        <span style={{"display":"block","fontSize":"12px","fontWeight":"700","color":"var(--navy-900)","marginBottom":"10px","letterSpacing":"0.5px","textTransform":"uppercase"}}>Gambar Sampul</span>
+        <div className="unggah" style={{"border":"1.5px dashed #C7BFA9","padding":"26px","display":"flex","alignItems":"center","gap":"18px"}}>
+          <span style={{"width":"52px","height":"52px","background":"var(--navy-100)","display":"flex","alignItems":"center","justifyContent":"center"}}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy-700)" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>
+          </span>
+          <div style={{"flex":"1"}}>
+            <div style={{"fontSize":"13.5px","color":"var(--navy-900)","fontWeight":"600"}}>Seret gambar ke sini atau pilih dari komputer</div>
+            <div style={{"fontSize":"12px","color":"var(--ink-soft)","marginTop":"3px"}}>JPG atau PNG, disarankan 1200 &times; 630 piksel</div>
+          </div>
+          <button type="button" style={{"fontSize":"13px","fontWeight":"600","padding":"11px 20px","border":"1px solid #173B6C","background":"#FFFFFF","color":"#173B6C"}}>Pilih File</button>
+        </div>
+      </div>
+
+      <div className="kotak-isi" style={{"background":"#FFFFFF","border":"1px solid var(--line)","flex":"1","display":"flex","flexDirection":"column","minHeight":"380px"}}>
+        <div style={{"display":"flex","alignItems":"center","gap":"4px","padding":"12px 16px","borderBottom":"1px solid var(--line)","background":"#FBFAF6"}}>
+          <button type="button" aria-label="Tebal" style={{"width":"32px","height":"32px","border":"none","background":"none","fontSize":"14px","fontWeight":"800","color":"var(--navy-900)"}}>B</button>
+          <button type="button" aria-label="Miring" style={{"width":"32px","height":"32px","border":"none","background":"none","fontSize":"14px","fontStyle":"italic","color":"var(--navy-900)"}}>I</button>
+          <button type="button" aria-label="Judul bagian" style={{"height":"32px","padding":"0 10px","border":"none","background":"none","fontSize":"13px","fontWeight":"700","color":"var(--navy-900)"}}>H2</button>
+          <span style={{"width":"1px","height":"20px","background":"var(--line)","margin":"0 6px"}}></span>
+          <button type="button" aria-label="Daftar berpoin" style={{"width":"32px","height":"32px","border":"none","background":"none","display":"flex","alignItems":"center","justifyContent":"center"}}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy-900)" strokeWidth="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg>
+          </button>
+          <button type="button" aria-label="Tautan" style={{"width":"32px","height":"32px","border":"none","background":"none","display":"flex","alignItems":"center","justifyContent":"center"}}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy-900)" strokeWidth="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.5 1.5"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.5-1.5"></path></svg>
+          </button>
+          <button type="button" aria-label="Sisipkan gambar" style={{"width":"32px","height":"32px","border":"none","background":"none","display":"flex","alignItems":"center","justifyContent":"center"}}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy-900)" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>
+          </button>
+        </div>
+        <label htmlFor="isi" style={{"position":"absolute","width":"1px","height":"1px","overflow":"hidden","clip":"rect(0 0 0 0)"}}>Isi artikel</label>
+        <textarea id="isi" style={{"flex":"1","width":"100%","border":"none","padding":"22px 24px","fontSize":"14.5px","lineHeight":"1.85","color":"var(--ink)","resize":"none","background":"#FFFFFF"}}>PHK sepihak adalah pemutusan hubungan kerja yang dilakukan tanpa memenuhi prosedur yang diatur undang-undang. Dalam praktiknya, pekerja sering menerima pemberitahuan mendadak tanpa penjelasan alasan yang sah.
+
+Artikel ini membahas apa yang bisa dilakukan pekerja, mulai dari mencatat bukti, mengajukan perundingan bipartit, hingga langkah ke pengadilan hubungan industrial apabila perundingan gagal.</textarea>
+      </div>
+
+    </div>
+
+    
+    <div className="samping" style={{"width":"380px","flex":"0 0 380px","display":"flex","flexDirection":"column","gap":"20px"}}>
+
+      <div style={{"background":"#FFFFFF","border":"1px solid var(--line)","padding":"22px 24px"}}>
+        <div style={{"display":"flex","alignItems":"center","justifyContent":"space-between","marginBottom":"18px"}}>
+          <span style={{"fontSize":"12px","fontWeight":"700","color":"var(--navy-900)","letterSpacing":"0.5px","textTransform":"uppercase"}}>Status</span>
+          <span style={{"fontSize":"11.5px","fontWeight":"700","padding":"5px 11px","borderRadius":"12px","background":"#F6EEDD","color":"#8A6A2F"}}>Draf</span>
+        </div>
+        <div style={{"display":"flex","gap":"10px"}}>
+          <button type="button" style={{"flex":"1","height":"44px","border":"1px solid #173B6C","background":"#FFFFFF","color":"#173B6C","fontSize":"13.5px","fontWeight":"600"}}>Simpan Draf</button>
+          <button type="button" style={{"flex":"1","height":"44px","border":"none","background":"#B08D4F","color":"var(--navy-950)","fontSize":"13.5px","fontWeight":"700"}}>Terbitkan</button>
+        </div>
+        <p style={{"fontSize":"12px","color":"var(--ink-soft)","margin":"14px 0 0","lineHeight":"1.6"}}>Setelah diterbitkan, artikel langsung tampil di halaman Berita dan bisa ditemukan mesin pencari.</p>
+      </div>
+
+      <div style={{"background":"#FFFFFF","border":"1px solid var(--line)","padding":"22px 24px"}}>
+        <div style={{"display":"flex","alignItems":"center","gap":"8px","marginBottom":"6px"}}>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B08D4F" strokeWidth="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <span style={{"fontSize":"12px","fontWeight":"700","color":"var(--navy-900)","letterSpacing":"0.5px","textTransform":"uppercase"}}>Pengaturan Pencarian</span>
+        </div>
+        <p style={{"fontSize":"12px","color":"var(--ink-soft)","lineHeight":"1.6","margin":"0 0 18px"}}>Bagian ini yang menentukan tampilan artikel saat muncul di hasil pencarian.</p>
+
+        <label htmlFor="seotitle" style={{"display":"block","fontSize":"12px","fontWeight":"600","color":"var(--navy-900)","marginBottom":"7px"}}>Judul untuk mesin pencari</label>
+        <input id="seotitle" type="text" value="PHK Sepihak: Langkah Hukum Pekerja" style={{"width":"100%","height":"42px","padding":"0 12px","fontSize":"13.5px","border":"1px solid var(--line)","background":"#FFFFFF","color":"var(--ink)"}} />
+        <div style={{"display":"flex","justifyContent":"space-between","margin":"6px 0 16px"}}>
+          <span style={{"fontSize":"11px","color":"#2E7D5B","fontWeight":"600"}}>Panjang ideal</span>
+          <span style={{"fontSize":"11px","color":"var(--ink-soft)"}}>34 / 60 karakter</span>
+        </div>
+
+        <label htmlFor="seodesc" style={{"display":"block","fontSize":"12px","fontWeight":"600","color":"var(--navy-900)","marginBottom":"7px"}}>Deskripsi singkat</label>
+        <textarea id="seodesc" style={{"width":"100%","height":"76px","padding":"10px 12px","fontSize":"13px","lineHeight":"1.55","border":"1px solid var(--line)","background":"#FFFFFF","color":"var(--ink)","resize":"none"}}>Panduan praktis dari Al Farizki &amp; Zhafir Law Firm untuk pekerja yang mengalami PHK sepihak: bukti yang perlu disiapkan hingga langkah hukumnya.</textarea>
+        <div style={{"display":"flex","justifyContent":"space-between","margin":"6px 0 16px"}}>
+          <span style={{"fontSize":"11px","color":"#2E7D5B","fontWeight":"600"}}>Panjang ideal</span>
+          <span style={{"fontSize":"11px","color":"var(--ink-soft)"}}>146 / 160 karakter</span>
+        </div>
+
+        <label htmlFor="slug" style={{"display":"block","fontSize":"12px","fontWeight":"600","color":"var(--navy-900)","marginBottom":"7px"}}>Alamat artikel (URL)</label>
+        <input id="slug" type="text" value="/berita/phk-sepihak-langkah-hukum" style={{"width":"100%","height":"42px","padding":"0 12px","fontSize":"13px","border":"1px solid var(--line)","background":"#FBFAF6","color":"var(--ink-soft)"}} />
+      </div>
+
+      <div style={{"background":"var(--navy-950)","padding":"22px 24px"}}>
+        <span style={{"display":"block","fontSize":"11.5px","fontWeight":"700","color":"#B08D4F","letterSpacing":"1px","textTransform":"uppercase","marginBottom":"14px"}}>Pratinjau di Hasil Pencarian</span>
+        <div style={{"background":"#FFFFFF","padding":"18px 18px"}}>
+          <div style={{"display":"flex","alignItems":"center","gap":"8px","marginBottom":"8px"}}>
+            <span style={{"width":"22px","height":"22px","borderRadius":"50%","background":"var(--navy-100)","display":"flex","alignItems":"center","justifyContent":"center","fontSize":"9px","fontWeight":"800","color":"var(--navy-800)"}}>AZ</span>
+            <div>
+              <div style={{"fontSize":"11.5px","color":"#202124","fontWeight":"600","lineHeight":"1.2"}}>Al Farizki &amp; Zhafir Law Firm</div>
+              <div style={{"fontSize":"10.5px","color":"#5F6368","lineHeight":"1.2"}}>alfarizkizhafir.com &rsaquo; berita</div>
+            </div>
+          </div>
+          <div style={{"fontSize":"16px","color":"#1A0DAB","lineHeight":"1.35","marginBottom":"5px"}}>PHK Sepihak: Langkah Hukum Pekerja</div>
+          <div style={{"fontSize":"12.5px","color":"#4D5156","lineHeight":"1.55"}}>Panduan praktis dari Al Farizki &amp; Zhafir Law Firm untuk pekerja yang mengalami PHK sepihak: bukti yang perlu disiapkan hingga langkah hukumnya.</div>
+        </div>
+        <p style={{"fontSize":"11.5px","color":"#8FA0B8","margin":"12px 0 0","lineHeight":"1.6"}}>Ilustrasi tampilan ringkasan artikel di mesin pencari. Hasil sebenarnya ditentukan oleh mesin pencari.</p>
+      </div>
+
+    </div>
+  </div>
+</div>

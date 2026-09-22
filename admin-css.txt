@@ -1,0 +1,68 @@
+
+    :root{
+      --navy-950:#0A1C36; --navy-900:#0F2545; --navy-800:#173B6C; --navy-100:#E7ECF3;
+      --gold:#B08D4F; --gold-light:#DCC28C; --paper:#F8F6F1; --ink:#181818;
+      --ink-soft:#57616D; --line:#DEDACE;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Work Sans',sans-serif;color:var(--ink);background:var(--paper);}
+    h1,h2,h3{font-family:'Playfair Display',serif;margin:0;}
+    a{color:inherit;text-decoration:none;}
+    button{font-family:'Work Sans',sans-serif;cursor:pointer;}
+    .row-hover:hover{background:#FAF8F3;}
+    .amp{font-family:'Work Sans',sans-serif;font-weight:600;}
+
+    /* TABLET */
+    @media (max-width: 1100px){
+      .abar{padding:0 22px !important;}
+      .konten{padding:30px 26px !important;}
+      .tbl-row{grid-template-columns:2.2fr 1fr 1fr 0.9fr 1fr !important;gap:12px !important;padding-left:20px !important;padding-right:20px !important;}
+      .statgrid{gap:14px !important;}
+    }
+
+    /* HP — susunan sama persis dengan laptop, hanya diperkecil */
+    @media (max-width: 760px){
+      .abar{padding:0 12px !important;height:44px !important;flex-basis:44px !important;}
+      .abar img{height:18px !important;}
+      .abar-kiri{gap:8px !important;}
+      .abar-kiri > span:last-child{font-size:8.5px !important;gap:4px !important;letter-spacing:0.5px !important;}
+      .abar-kiri svg{width:10px !important;height:10px !important;}
+      .abar-kanan{gap:9px !important;}
+      .abar-kanan a, .abar-kanan span{font-size:9px !important;}
+      .abar-kanan svg{width:11px !important;height:11px !important;}
+      .abar-kanan a{gap:4px !important;}
+      .abar-kanan > div{gap:5px !important;}
+      .avatar{width:22px !important;height:22px !important;font-size:8px !important;}
+
+      .konten{padding:18px 12px !important;}
+      .kepala{margin-bottom:16px !important;gap:10px !important;}
+      .remah{font-size:9px !important;margin-bottom:5px !important;}
+      .kepala h1{font-size:17px !important;}
+      .btn-tulis{font-size:10px !important;padding:9px 10px !important;gap:5px !important;white-space:nowrap;}
+      .btn-tulis svg{width:11px !important;height:11px !important;}
+
+      .statgrid{gap:6px !important;margin-bottom:18px !important;}
+      .statgrid > div{padding:10px 8px !important;}
+      .statgrid > div > div:first-child{font-size:17px !important;}
+      .statgrid > div > div:last-child{font-size:8px !important;line-height:1.3 !important;}
+
+      .tbl-atas{padding:10px 10px !important;}
+      .tbl-atas h2{font-size:12px !important;}
+      .tbl-atas span{font-size:8.5px !important;padding:4px 7px !important;}
+      .tbl-atas > div{gap:4px !important;}
+
+      .tbl-row{grid-template-columns:2.2fr 1fr 0.9fr 0.95fr 1.35fr !important;gap:5px !important;padding-left:10px !important;padding-right:10px !important;padding-top:10px !important;padding-bottom:10px !important;}
+      .tbl-row > span{font-size:7.5px !important;letter-spacing:0.3px !important;}
+      .tbl-row .judul{font-size:9px !important;}
+      .tbl-row .slug{font-size:7px !important;}
+      .tbl-row .status{font-size:7.5px !important;padding:3px 5px !important;}
+      .tbl-row .aksi{gap:3px !important;}
+      .tbl-row .aksi button{width:20px !important;height:20px !important;padding:0 !important;}
+      .tbl-row .aksi svg{width:10px !important;height:10px !important;}
+
+      .pager{padding:10px !important;}
+      .pager span{font-size:8.5px !important;}
+      .pager > div{gap:4px !important;}
+      .pager > div > span{padding:4px 6px !important;}
+    }
+  

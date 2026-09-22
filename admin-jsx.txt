@@ -1,0 +1,186 @@
+
+<div style={{"width":"100%","minHeight":"100vh","background":"var(--paper)","display":"flex","flexDirection":"column"}}>
+
+  
+  <div className="abar" style={{"height":"52px","background":"var(--navy-950)","display":"flex","alignItems":"center","justifyContent":"space-between","padding":"0 32px","flex":"0 0 52px"}}>
+    <div className="abar-kiri" style={{"display":"flex","alignItems":"center","gap":"18px"}}>
+      <img src="/images/logo-putih.png" alt="Al Farizki &amp; Zhafir Law Firm" style={{"height":"26px","width":"auto","display":"block"}} />
+      <span style={{"width":"1px","height":"20px","background":"rgba(255,255,255,0.2)"}}></span>
+      <span style={{"display":"flex","alignItems":"center","gap":"8px","fontSize":"12px","color":"#B08D4F","fontWeight":"700","letterSpacing":"1px","textTransform":"uppercase"}}>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        Mode Admin
+      </span>
+    </div>
+    <div className="abar-kanan" style={{"display":"flex","alignItems":"center","gap":"22px"}}>
+      <a href="beranda.html" style={{"display":"flex","alignItems":"center","gap":"7px","fontSize":"13px","color":"#C9D3E0","fontWeight":"500"}}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        Lihat Website
+      </a>
+      <div style={{"display":"flex","alignItems":"center","gap":"10px"}}>
+        <span className="avatar" style={{"width":"30px","height":"30px","borderRadius":"50%","background":"#B08D4F","color":"var(--navy-950)","display":"flex","alignItems":"center","justifyContent":"center","fontSize":"12px","fontWeight":"700"}}>GA</span>
+        <span style={{"fontSize":"13px","color":"#FFFFFF","fontWeight":"500"}}>Gilang</span>
+      </div>
+      <a href="login.html" style={{"fontSize":"13px","color":"#8FA0B8","fontWeight":"500"}}>Keluar</a>
+    </div>
+  </div>
+
+  
+  <div className="konten" style={{"flex":"1","width":"100%","maxWidth":"1440px","margin":"0 auto","padding":"38px 48px"}}>
+
+    <div className="kepala" style={{"display":"flex","justifyContent":"space-between","alignItems":"flex-end","marginBottom":"30px","gap":"20px"}}>
+      <div style={{"minWidth":"0"}}>
+        <div className="remah" style={{"display":"flex","alignItems":"center","gap":"8px","fontSize":"12px","color":"var(--ink-soft)","marginBottom":"10px"}}>
+          <span>Dashboard</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m9 18 6-6-6-6"></path></svg>
+          <span style={{"color":"var(--navy-900)","fontWeight":"600"}}>Berita &amp; Opini</span>
+        </div>
+        <h1 style={{"fontSize":"32px","color":"var(--navy-950)","fontWeight":"700"}}>Kelola Berita <span className="amp">&amp;</span> Opini</h1>
+      </div>
+      <a href="tulis-berita.html" className="btn-tulis" style={{"display":"flex","alignItems":"center","gap":"9px","background":"#B08D4F","color":"var(--navy-950)","fontSize":"14px","fontWeight":"700","padding":"14px 26px","letterSpacing":"0.3px","flex":"0 0 auto"}}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M12 5v14M5 12h14"></path></svg>
+        Tulis Berita Baru
+      </a>
+    </div>
+
+    
+    <div style={{"display":"flex","alignItems":"center","gap":"10px","marginBottom":"14px"}}>
+      <span style={{"fontSize":"11px","letterSpacing":"1px","textTransform":"uppercase","color":"var(--ink-soft)","fontWeight":"600"}}>Ringkasan</span>
+      <span style={{"fontSize":"10.5px","background":"var(--navy-100)","color":"var(--navy-800)","padding":"3px 9px","borderRadius":"10px","fontWeight":"600"}}>data contoh</span>
+    </div>
+    <div className="statgrid" style={{"display":"grid","gridTemplateColumns":"repeat(4,minmax(0,1fr))","gap":"20px","marginBottom":"38px"}}>
+      <div style={{"background":"#FFFFFF","border":"1px solid var(--line)","padding":"22px 24px"}}>
+        <div style={{"fontFamily":"'Playfair Display',serif","fontSize":"32px","fontWeight":"700","color":"var(--navy-950)"}}>12</div>
+        <div style={{"fontSize":"12.5px","color":"var(--ink-soft)","marginTop":"4px"}}>Total artikel</div>
+      </div>
+      <div style={{"background":"#FFFFFF","border":"1px solid var(--line)","padding":"22px 24px"}}>
+        <div style={{"fontFamily":"'Playfair Display',serif","fontSize":"32px","fontWeight":"700","color":"#2E7D5B"}}>9</div>
+        <div style={{"fontSize":"12.5px","color":"var(--ink-soft)","marginTop":"4px"}}>Terbit</div>
+      </div>
+      <div style={{"background":"#FFFFFF","border":"1px solid var(--line)","padding":"22px 24px"}}>
+        <div style={{"fontFamily":"'Playfair Display',serif","fontSize":"32px","fontWeight":"700","color":"#B08D4F"}}>3</div>
+        <div style={{"fontSize":"12.5px","color":"var(--ink-soft)","marginTop":"4px"}}>Draf belum terbit</div>
+      </div>
+      <div style={{"background":"#FFFFFF","border":"1px solid var(--line)","padding":"22px 24px"}}>
+        <div style={{"fontFamily":"'Playfair Display',serif","fontSize":"32px","fontWeight":"700","color":"var(--navy-950)"}}>1.248</div>
+        <div style={{"fontSize":"12.5px","color":"var(--ink-soft)","marginTop":"4px"}}>Pembaca 30 hari terakhir</div>
+      </div>
+    </div>
+
+    
+    <div style={{"background":"#FFFFFF","border":"1px solid var(--line)"}}>
+      <div className="tbl-atas" style={{"display":"flex","alignItems":"center","justifyContent":"space-between","padding":"20px 26px","borderBottom":"1px solid var(--line)","gap":"12px"}}>
+        <h2 style={{"fontSize":"17px","color":"var(--navy-950)","fontWeight":"700"}}>Daftar Artikel</h2>
+        <div style={{"display":"flex","gap":"10px"}}>
+          <span style={{"fontSize":"12px","fontWeight":"600","padding":"7px 14px","background":"#173B6C","color":"#FFFFFF"}}>Semua</span>
+          <span style={{"fontSize":"12px","fontWeight":"600","padding":"7px 14px","border":"1px solid var(--line)","color":"var(--navy-900)"}}>Terbit</span>
+          <span style={{"fontSize":"12px","fontWeight":"600","padding":"7px 14px","border":"1px solid var(--line)","color":"var(--navy-900)"}}>Draf</span>
+        </div>
+      </div>
+
+      <div className="tbl-row" style={{"display":"grid","gridTemplateColumns":"2.6fr 1fr 1fr 0.9fr 1fr","gap":"16px","padding":"14px 26px","background":"#FBFAF6","borderBottom":"1px solid var(--line)"}}>
+        <span style={{"fontSize":"11px","letterSpacing":"1px","textTransform":"uppercase","color":"var(--ink-soft)","fontWeight":"700"}}>Judul</span>
+        <span style={{"fontSize":"11px","letterSpacing":"1px","textTransform":"uppercase","color":"var(--ink-soft)","fontWeight":"700"}}>Kategori</span>
+        <span style={{"fontSize":"11px","letterSpacing":"1px","textTransform":"uppercase","color":"var(--ink-soft)","fontWeight":"700"}}>Penulis</span>
+        <span style={{"fontSize":"11px","letterSpacing":"1px","textTransform":"uppercase","color":"var(--ink-soft)","fontWeight":"700"}}>Status</span>
+        <span style={{"fontSize":"11px","letterSpacing":"1px","textTransform":"uppercase","color":"var(--ink-soft)","fontWeight":"700","textAlign":"right"}}>Aksi</span>
+      </div>
+
+      
+        <div className="row-hover tbl-row" style={{"display":"grid","gridTemplateColumns":"2.6fr 1fr 1fr 0.9fr 1fr","gap":"16px","padding":"18px 26px","borderBottom":"1px solid var(--line)","alignItems":"center"}}>
+          <div style={{"minWidth":"0"}}>
+            <div className="judul" style={{"fontSize":"14px","color":"var(--navy-950)","fontWeight":"600","lineHeight":"1.4"}}>Karyawan Di-PHK Sepihak: Langkah Hukum yang Bisa Diambil</div>
+            <div className="slug" style={{"fontSize":"11.5px","color":"#98A2AE","marginTop":"4px","overflow":"hidden","textOverflow":"ellipsis","whiteSpace":"nowrap"}}>/berita/phk-sepihak-langkah-hukum</div>
+          </div>
+          <span style={{"fontSize":"12.5px","color":"var(--ink-soft)"}}>Opini Hukum</span>
+          <span style={{"fontSize":"12.5px","color":"var(--ink-soft)"}}>Gilang</span>
+          <span className="status" style={{"fontSize":"11.5px","fontWeight":"700","padding":"5px 11px","borderRadius":"12px","justifySelf":"start","background":"#E3F1EA","color":"#2E7D5B"}}>Terbit</span>
+          <div className="aksi" style={{"display":"flex","gap":"8px","justifyContent":"flex-end"}}>
+            <button aria-label="Edit artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" strokeWidth="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button aria-label="Lihat artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" strokeWidth="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+            <button aria-label="Hapus artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B4443C" strokeWidth="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"></path></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div className="row-hover tbl-row" style={{"display":"grid","gridTemplateColumns":"2.6fr 1fr 1fr 0.9fr 1fr","gap":"16px","padding":"18px 26px","borderBottom":"1px solid var(--line)","alignItems":"center"}}>
+          <div style={{"minWidth":"0"}}>
+            <div className="judul" style={{"fontSize":"14px","color":"var(--navy-950)","fontWeight":"600","lineHeight":"1.4"}}>Sertifikat Tanah Ganda: Siapa yang Berhak atas Tanahnya?</div>
+            <div className="slug" style={{"fontSize":"11.5px","color":"#98A2AE","marginTop":"4px","overflow":"hidden","textOverflow":"ellipsis","whiteSpace":"nowrap"}}>/berita/sertifikat-tanah-ganda</div>
+          </div>
+          <span style={{"fontSize":"12.5px","color":"var(--ink-soft)"}}>Opini Hukum</span>
+          <span style={{"fontSize":"12.5px","color":"var(--ink-soft)"}}>Bayu Nando</span>
+          <span className="status" style={{"fontSize":"11.5px","fontWeight":"700","padding":"5px 11px","borderRadius":"12px","justifySelf":"start","background":"#E3F1EA","color":"#2E7D5B"}}>Terbit</span>
+          <div className="aksi" style={{"display":"flex","gap":"8px","justifyContent":"flex-end"}}>
+            <button aria-label="Edit artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" strokeWidth="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button aria-label="Lihat artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" strokeWidth="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+            <button aria-label="Hapus artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B4443C" strokeWidth="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"></path></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div className="row-hover tbl-row" style={{"display":"grid","gridTemplateColumns":"2.6fr 1fr 1fr 0.9fr 1fr","gap":"16px","padding":"18px 26px","borderBottom":"1px solid var(--line)","alignItems":"center"}}>
+          <div style={{"minWidth":"0"}}>
+            <div className="judul" style={{"fontSize":"14px","color":"var(--navy-950)","fontWeight":"600","lineHeight":"1.4"}}>Somasi: Kapan Perlu Dikirim dan Apa Akibat Hukumnya</div>
+            <div className="slug" style={{"fontSize":"11.5px","color":"#98A2AE","marginTop":"4px","overflow":"hidden","textOverflow":"ellipsis","whiteSpace":"nowrap"}}>/berita/somasi-kapan-perlu-dikirim</div>
+          </div>
+          <span style={{"fontSize":"12.5px","color":"var(--ink-soft)"}}>Legal Update</span>
+          <span style={{"fontSize":"12.5px","color":"var(--ink-soft)"}}>Zhafir</span>
+          <span className="status" style={{"fontSize":"11.5px","fontWeight":"700","padding":"5px 11px","borderRadius":"12px","justifySelf":"start","background":"#F6EEDD","color":"#8A6A2F"}}>Draf</span>
+          <div className="aksi" style={{"display":"flex","gap":"8px","justifyContent":"flex-end"}}>
+            <button aria-label="Edit artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" strokeWidth="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button aria-label="Lihat artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" strokeWidth="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+            <button aria-label="Hapus artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B4443C" strokeWidth="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"></path></svg>
+            </button>
+          </div>
+        </div>
+      
+        <div className="row-hover tbl-row" style={{"display":"grid","gridTemplateColumns":"2.6fr 1fr 1fr 0.9fr 1fr","gap":"16px","padding":"18px 26px","borderBottom":"1px solid var(--line)","alignItems":"center"}}>
+          <div style={{"minWidth":"0"}}>
+            <div className="judul" style={{"fontSize":"14px","color":"var(--navy-950)","fontWeight":"600","lineHeight":"1.4"}}>Membeli Rumah Second: Dokumen yang Wajib Dicek Sebelum Transaksi</div>
+            <div className="slug" style={{"fontSize":"11.5px","color":"#98A2AE","marginTop":"4px","overflow":"hidden","textOverflow":"ellipsis","whiteSpace":"nowrap"}}>/berita/cek-dokumen-beli-rumah-second</div>
+          </div>
+          <span style={{"fontSize":"12.5px","color":"var(--ink-soft)"}}>Opini Hukum</span>
+          <span style={{"fontSize":"12.5px","color":"var(--ink-soft)"}}>Arimbi</span>
+          <span className="status" style={{"fontSize":"11.5px","fontWeight":"700","padding":"5px 11px","borderRadius":"12px","justifySelf":"start","background":"#E3F1EA","color":"#2E7D5B"}}>Terbit</span>
+          <div className="aksi" style={{"display":"flex","gap":"8px","justifyContent":"flex-end"}}>
+            <button aria-label="Edit artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" strokeWidth="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
+            </button>
+            <button aria-label="Lihat artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--navy-800)" strokeWidth="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </button>
+            <button aria-label="Hapus artikel" style={{"width":"32px","height":"32px","border":"1px solid var(--line)","background":"#FFFFFF","display":"flex","alignItems":"center","justifyContent":"center"}}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B4443C" strokeWidth="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"></path></svg>
+            </button>
+          </div>
+        </div>
+      
+
+      <div className="pager" style={{"padding":"16px 26px","display":"flex","justifyContent":"space-between","alignItems":"center"}}>
+        <span style={{"fontSize":"12.5px","color":"var(--ink-soft)"}}>Menampilkan 4 dari 12 artikel</span>
+        <div style={{"display":"flex","gap":"8px"}}>
+          <span style={{"fontSize":"12.5px","padding":"7px 13px","border":"1px solid var(--line)","color":"var(--ink-soft)"}}>Sebelumnya</span>
+          <span style={{"fontSize":"12.5px","padding":"7px 13px","background":"#173B6C","color":"#FFFFFF","fontWeight":"600"}}>1</span>
+          <span style={{"fontSize":"12.5px","padding":"7px 13px","border":"1px solid var(--line)","color":"var(--navy-900)"}}>2</span>
+          <span style={{"fontSize":"12.5px","padding":"7px 13px","border":"1px solid var(--line)","color":"var(--navy-900)"}}>Berikutnya</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
