@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
 .wa-melayang:hover .wa-bulat{transform:translateY(-3px);}
 @media (prefers-reduced-motion: reduce){.wa-bulat::after{animation:none;display:none;}}
 @media (max-width: 760px){
-  .wa-melayang{right:14px !important;bottom:80px !important;}
+  .wa-melayang{right:14px !important;bottom:110px !important;}
   .wa-label{display:none !important;}
   .wa-bulat{width:50px !important;height:50px !important;flex-basis:50px !important;}
   .wa-bulat svg{width:22px;height:22px;}
