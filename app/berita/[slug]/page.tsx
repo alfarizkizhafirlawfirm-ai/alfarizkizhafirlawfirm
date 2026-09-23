@@ -33,8 +33,9 @@ export default async function SingleArticlePage({ params }: { params: { slug: st
 
   // We redirect unpublished articles if user is not admin
   if (article.status !== 'published') {
-    const { data: isAdmin } = await supabase.rpc('is_admin')
-    if (!isAdmin) {
+    const { data: { user } } = await supabase.auth.getUser()
+    const isUserAdmin = !!user
+    if (!isUserAdmin) {
       notFound()
     }
   }

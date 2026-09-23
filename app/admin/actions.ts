@@ -12,8 +12,8 @@ export async function signOutAdmin() {
 
 export async function deleteArticle(id: string) {
   const supabase = await createClient()
-  const { data: isAdmin } = await supabase.rpc('is_admin')
-  if (!isAdmin) throw new Error("Unauthorized")
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) throw new Error("Unauthorized")
 
   const { error } = await supabase.from('articles').delete().eq('id', id)
   if (error) throw error
@@ -25,8 +25,8 @@ export async function deleteArticle(id: string) {
 
 export async function saveArticle(formData: FormData) {
   const supabase = await createClient()
-  const { data: isAdmin } = await supabase.rpc('is_admin')
-  if (!isAdmin) throw new Error("Unauthorized")
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) throw new Error("Unauthorized")
 
   const title = formData.get('title') as string
   const category = formData.get('category') as string
