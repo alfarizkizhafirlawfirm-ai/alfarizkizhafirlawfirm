@@ -6,6 +6,7 @@ import TiptapEditor from './TiptapEditor'
 import { saveArticle } from '../actions'
 import SubmitButton from './SubmitButton'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ArticleForm({ initialData, articleId }: { initialData?: any, articleId?: string }) {
   const [title, setTitle] = useState(initialData?.title || 'Karyawan Di-PHK Sepihak: Langkah Hukum yang Bisa Diambil')
   const [seoTitle, setSeoTitle] = useState(initialData?.seo_title || 'PHK Sepihak: Langkah Hukum Pekerja')

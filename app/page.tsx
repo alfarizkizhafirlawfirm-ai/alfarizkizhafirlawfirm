@@ -2936,6 +2936,7 @@ export default async function Home() {
                       gap: "18px",
                     }}
                   >
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     {otherArticles.map((article: any) => (
                       <Link href={`/berita/${article.slug}`} key={article.id} style={{textDecoration: "none", color: "inherit"}}>
                         <div

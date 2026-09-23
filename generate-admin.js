@@ -1,3 +1,4 @@
+/* eslint-disable */
 const fs = require('fs');
 
 function convert(filepath, outfile) {

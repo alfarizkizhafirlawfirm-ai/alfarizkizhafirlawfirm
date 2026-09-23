@@ -1,3 +1,4 @@
+/* eslint-disable */
 const fs = require('fs');
 
 let adminCss = fs.readFileSync('admin-css.txt', 'utf8');
