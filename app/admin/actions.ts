@@ -56,13 +56,21 @@ export async function saveArticle(formData: FormData) {
     const fileExt = image.name.split('.').pop()
     const fileName = `${Math.random().toString(36).substring(2)}.${fileExt}`
     
-    // We upload to 'sampul-berita' bucket.
-    const { error: uploadError } = await supabase.storage.from('sampul-berita').upload(fileName, image)
-    if (uploadError) {
-      console.error("Gagal mengunggah gambar.", uploadError)
-    } else {
-      const { data: publicUrlData } = supabase.storage.from('sampul-berita').getPublicUrl(fileName)
-      cover_url = publicUrlData.publicUrl
+    try {
+      const arrayBuffer = await image.arrayBuffer()
+      // We upload to 'sampul-berita' bucket.
+      const { error: uploadError } = await supabase.storage.from('sampul-berita').upload(fileName, arrayBuffer, {
+        contentType: image.type,
+      })
+      
+      if (uploadError) {
+        console.error("Gagal mengunggah gambar.", uploadError)
+      } else {
+        const { data: publicUrlData } = supabase.storage.from('sampul-berita').getPublicUrl(fileName)
+        cover_url = publicUrlData.publicUrl
+      }
+    } catch (e) {
+      console.error("Exception saat unggah gambar:", e)
     }
   }
 
