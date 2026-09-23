@@ -3405,7 +3405,7 @@ export default async function Home() {
           style={{
             position: "fixed",
             right: "24px",
-            bottom: "90px",
+            bottom: "60px",
             zIndex: "60",
             display: "flex",
             alignItems: "center",
