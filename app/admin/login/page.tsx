@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { login } from "./actions";
+import SubmitButton from "../components/SubmitButton";
 
 export const metadata = {
   title: "Login Admin — Al Farizki & Zhafir Law Firm",
@@ -297,8 +298,7 @@ export default async function LoginPage({
               </Link>
             </div>
 
-            <button
-              type="submit"
+            <SubmitButton
               style={{
                 width: "100%",
                 height: "50px",
@@ -311,7 +311,7 @@ export default async function LoginPage({
               }}
             >
               Masuk
-            </button>
+            </SubmitButton>
           </form>
 
           <p

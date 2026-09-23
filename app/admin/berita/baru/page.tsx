@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import AdminBar from '../../components/AdminBar'
 import TiptapEditor from '../../components/TiptapEditor'
 import { saveArticle } from '../../actions'
+import SubmitButton from '../../components/SubmitButton'
 
 export default function NewArticle() {
   const [title, setTitle] = useState('Karyawan Di-PHK Sepihak: Langkah Hukum yang Bisa Diambil')
@@ -104,8 +105,8 @@ export default function NewArticle() {
               <span style={{fontSize: "11.5px", fontWeight: 700, padding: "5px 11px", borderRadius: "12px", background: "#F6EEDD", color: "#8A6A2F"}}>Draf</span>
             </div>
             <div style={{display: "flex", gap: "10px"}}>
-              <button type="submit" onClick={() => setStatus('draft')} style={{flex: 1, height: "44px", border: "1px solid #173B6C", background: "#FFFFFF", color: "#173B6C", fontSize: "13.5px", fontWeight: 600, cursor: "pointer"}}>Simpan Draf</button>
-              <button type="submit" onClick={() => setStatus('published')} style={{flex: 1, height: "44px", border: "none", background: "#B08D4F", color: "var(--navy-950)", fontSize: "13.5px", fontWeight: 700, cursor: "pointer"}}>Terbitkan</button>
+              <SubmitButton pendingText="..." onClick={() => setStatus('draft')} style={{flex: 1, height: "44px", border: "1px solid #173B6C", background: "#FFFFFF", color: "#173B6C", fontSize: "13.5px", fontWeight: 600, cursor: "pointer"}}>Simpan Draf</SubmitButton>
+              <SubmitButton pendingText="..." onClick={() => setStatus('published')} style={{flex: 1, height: "44px", border: "none", background: "#B08D4F", color: "var(--navy-950)", fontSize: "13.5px", fontWeight: 700, cursor: "pointer"}}>Terbitkan</SubmitButton>
             </div>
             <p style={{fontSize: "12px", color: "var(--ink-soft)", margin: "14px 0 0", lineHeight: 1.6}}>Setelah diterbitkan, artikel langsung tampil di halaman Berita dan bisa ditemukan mesin pencari.</p>
           </div>

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { signOutAdmin } from '../actions'
+import SubmitButton from './SubmitButton'
 
 export default function AdminBar({ showBackToDashboard = false }: { showBackToDashboard?: boolean }) {
   return (
@@ -31,7 +32,7 @@ export default function AdminBar({ showBackToDashboard = false }: { showBackToDa
         </div>
         {!showBackToDashboard && (
           <form action={signOutAdmin}>
-            <button type="submit" className="text-xs md:text-[13px] text-[#8FA0B8] font-medium bg-transparent border-none cursor-pointer">Keluar</button>
+            <SubmitButton pendingText="Keluar..." className="text-xs md:text-[13px] text-[#8FA0B8] font-medium bg-transparent border-none cursor-pointer">Keluar</SubmitButton>
           </form>
         )}
       </div>
