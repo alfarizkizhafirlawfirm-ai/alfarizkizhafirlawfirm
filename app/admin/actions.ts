@@ -5,8 +5,13 @@ import { redirect } from 'next/navigation'
 import { revalidatePath } from 'next/cache'
 
 export async function signOutAdmin() {
-  const supabase = await createClient()
-  await supabase.auth.signOut()
+  try {
+    const supabase = await createClient()
+    await supabase.auth.signOut()
+  } catch (e) {
+    console.error(e)
+  }
+  revalidatePath('/', 'layout')
   redirect('/admin/login')
 }
 
