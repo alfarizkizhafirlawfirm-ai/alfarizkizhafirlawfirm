@@ -128,7 +128,7 @@ export default async function LoginPage({
               </svg>
             </span>
             <span style={{ fontSize: "13.5px", color: "#C9D3E0" }}>
-              alfarizkizhafir.com &mdash; halaman publik
+              alfarizkizhafir.id &mdash; halaman publik
             </span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -155,7 +155,7 @@ export default async function LoginPage({
               </svg>
             </span>
             <span style={{ fontSize: "13.5px", color: "#C9D3E0" }}>
-              alfarizkizhafir.com/admin &mdash; setelah login
+              alfarizkizhafir.id/admin &mdash; setelah login
             </span>
           </div>
         </div>
@@ -243,7 +243,7 @@ export default async function LoginPage({
                 id="email"
                 name="email"
                 type="email"
-                placeholder="admin@alfarizkizhafir.com"
+                placeholder="admin@alfarizkizhafir.id"
                 required
                 style={{
                   width: "100%",
