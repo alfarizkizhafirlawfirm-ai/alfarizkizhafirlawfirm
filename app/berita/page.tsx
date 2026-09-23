@@ -36,6 +36,7 @@ export default async function BeritaPage() {
 
         {articles && articles.length > 0 ? (
           <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "28px"}}>
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {articles.map((article: any) => (
               <Link href={`/berita/${article.slug}`} key={article.id} style={{textDecoration: "none", color: "inherit"}}>
                 <div className="card-lift" style={{background: "#FFFFFF", border: "1px solid var(--line)", display: "flex", flexDirection: "column", height: "100%"}}>

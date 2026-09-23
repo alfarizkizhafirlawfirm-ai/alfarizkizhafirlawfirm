@@ -21,6 +21,7 @@ export default function ArticleForm({ initialData, articleId }: { initialData?: 
   useEffect(() => {
     if (!slug || slug.startsWith('/berita/phk') || slug === '/berita/') {
       const generated = '/berita/' + title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSlug(generated)
     }
   }, [title]) // eslint-disable-line

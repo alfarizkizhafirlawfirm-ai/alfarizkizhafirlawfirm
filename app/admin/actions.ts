@@ -76,6 +76,7 @@ export async function saveArticle(formData: FormData) {
 
   const id = formData.get('id') as string | null
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const payload: any = {
     title,
     category,

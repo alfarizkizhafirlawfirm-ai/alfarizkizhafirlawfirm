@@ -3,12 +3,13 @@ import { createClient } from '@/utils/supabase/server'
 import { formatDate } from '@/utils/date'
 import { notFound } from 'next/navigation'
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params
   const supabase = await createClient()
   const { data: article } = await supabase
     .from('articles')
     .select('title, seo_title, seo_description')
-    .eq('slug', params.slug)
+    .eq('slug', resolvedParams.slug)
     .single()
 
   if (!article) return { title: 'Artikel Tidak Ditemukan' }
@@ -19,12 +20,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default async function SingleArticlePage({ params }: { params: { slug: string } }) {
+export default async function SingleArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params
   const supabase = await createClient()
   const { data: article } = await supabase
     .from('articles')
     .select('*')
-    .eq('slug', params.slug)
+    .eq('slug', resolvedParams.slug)
     .single()
 
   if (!article) {
