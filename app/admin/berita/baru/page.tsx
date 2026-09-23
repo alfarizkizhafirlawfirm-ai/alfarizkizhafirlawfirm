@@ -26,7 +26,7 @@ export default function NewArticle() {
     <div style={{width: "100%", minHeight: "100vh", background: "var(--paper)", display: "flex", flexDirection: "column"}}>
       <AdminBar showBackToDashboard />
       
-      <form action={saveArticle} className="badan" style={{flex: 1, width: "100%", maxWidth: "1440px", margin: "0 auto", padding: "34px 48px", display: "flex", gap: "30px"}}>
+      <form action={saveArticle} className="badan flex flex-col md:flex-row flex-1 w-full max-w-[1440px] mx-auto p-5 md:py-[34px] md:px-[48px] gap-[30px]">
         <input type="hidden" name="content" value={content} />
         <input type="hidden" name="status" value={status} />
         
@@ -40,7 +40,7 @@ export default function NewArticle() {
             <label htmlFor="title" style={{display: "block", fontSize: "12px", fontWeight: 700, color: "var(--navy-900)", marginBottom: "8px", letterSpacing: "0.5px", textTransform: "uppercase"}}>Judul Artikel</label>
             <input id="title" name="title" type="text" value={title} onChange={e => setTitle(e.target.value)} required style={{width: "100%", height: "52px", padding: "0 16px", fontSize: "17px", fontWeight: 600, color: "var(--navy-950)", border: "1px solid var(--line)", background: "#FFFFFF"}} />
 
-            <div className="dua-kolom" style={{display: "flex", gap: "18px", marginTop: "20px"}}>
+            <div className="dua-kolom flex flex-col md:flex-row gap-[18px] mt-5">
               <div style={{flex: 1, minWidth: 0}}>
                 <label htmlFor="category" style={{display: "block", fontSize: "12px", fontWeight: 700, color: "var(--navy-900)", marginBottom: "8px", letterSpacing: "0.5px", textTransform: "uppercase"}}>Kategori</label>
                 <select id="category" name="category" style={{width: "100%", height: "44px", padding: "0 12px", fontSize: "14px", border: "1px solid var(--line)", background: "#FFFFFF", color: "var(--ink)"}}>
@@ -97,7 +97,7 @@ export default function NewArticle() {
           <TiptapEditor content={content} onChange={setContent} />
         </div>
 
-        <div className="samping" style={{width: "380px", flex: "0 0 380px", display: "flex", flexDirection: "column", gap: "20px"}}>
+        <div className="samping flex flex-col gap-5 w-full md:w-[380px] md:shrink-0">
           <div style={{background: "#FFFFFF", border: "1px solid var(--line)", padding: "22px 24px"}}>
             <div style={{display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "18px"}}>
               <span style={{fontSize: "12px", fontWeight: 700, color: "var(--navy-900)", letterSpacing: "0.5px", textTransform: "uppercase"}}>Status</span>

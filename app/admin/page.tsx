@@ -27,8 +27,8 @@ export default async function AdminDashboard({ searchParams }: { searchParams: {
   return (
     <div style={{width: "100%", minHeight: "100vh", background: "var(--paper)", display: "flex", flexDirection: "column"}}>
       <AdminBar />
-      <div className="konten" style={{flex: 1, width: "100%", maxWidth: "1440px", margin: "0 auto", padding: "38px 48px"}}>
-        <div className="kepala" style={{display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "30px", gap: "20px"}}>
+      <div className="konten flex-1 w-full max-w-[1440px] mx-auto p-5 md:py-[38px] md:px-[48px]">
+        <div className="kepala flex flex-col md:flex-row md:items-end justify-between mb-[30px] gap-5">
           <div style={{minWidth: 0}}>
             <div className="remah" style={{display: "flex", alignItems: "center", gap: "8px", fontSize: "12px", color: "var(--ink-soft)", marginBottom: "10px"}}>
               <span>Dashboard</span>
@@ -46,7 +46,7 @@ export default async function AdminDashboard({ searchParams }: { searchParams: {
         <div style={{display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px"}}>
           <span style={{fontSize: "11px", letterSpacing: "1px", textTransform: "uppercase", color: "var(--ink-soft)", fontWeight: 600}}>Ringkasan</span>
         </div>
-        <div className="statgrid" style={{display: "grid", gridTemplateColumns: "repeat(4,minmax(0,1fr))", gap: "20px", marginBottom: "38px"}}>
+        <div className="statgrid grid grid-cols-2 md:grid-cols-4 gap-5 mb-[38px]">
           <div style={{background: "#FFFFFF", border: "1px solid var(--line)", padding: "22px 24px"}}>
             <div style={{fontFamily: "'Playfair Display',serif", fontSize: "32px", fontWeight: 700, color: "var(--navy-950)"}}>{totalCount || 0}</div>
             <div style={{fontSize: "12.5px", color: "var(--ink-soft)", marginTop: "4px"}}>Total artikel</div>
@@ -65,7 +65,8 @@ export default async function AdminDashboard({ searchParams }: { searchParams: {
           </div>
         </div>
 
-        <div style={{background: "#FFFFFF", border: "1px solid var(--line)"}}>
+        <div className="overflow-x-auto bg-white border border-line">
+          <div className="min-w-[800px]">
           <div className="tbl-atas" style={{display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px 26px", borderBottom: "1px solid var(--line)", gap: "12px"}}>
             <h2 style={{fontSize: "17px", color: "var(--navy-950)", fontWeight: 700}}>Daftar Artikel</h2>
             <div style={{display: "flex", gap: "10px"}}>
@@ -119,6 +120,7 @@ export default async function AdminDashboard({ searchParams }: { searchParams: {
               <span style={{fontSize: "12.5px", color: "var(--ink-soft)"}}>Menampilkan {articles.length} artikel</span>
             </div>
           )}
+          </div>
         </div>
 
       </div>

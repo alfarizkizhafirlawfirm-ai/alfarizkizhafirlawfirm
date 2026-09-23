@@ -15,29 +15,9 @@ export default async function LoginPage({
   const error = resolvedParams.error as string | undefined;
 
   return (
-    <div
-      style={{
-        width: "100%",
-        minHeight: "100vh",
-        display: "flex",
-        background: "#FFFFFF",
-      }}
-    >
+    <div className="w-full min-h-screen flex flex-col md:flex-row bg-white">
       {/* panel kiri */}
-      <div
-        className="panel"
-        style={{
-          width: "520px",
-          flex: "0 0 auto",
-          background: "var(--navy-950)",
-          padding: "56px 52px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+      <div className="panel md:w-[520px] w-full flex-none bg-navy-950 px-8 py-10 md:px-[52px] md:py-[56px] flex flex-col justify-between relative overflow-hidden">
         <Image
           className="kincir"
           src="/images/motif-kincir.png"
@@ -162,18 +142,7 @@ export default async function LoginPage({
       </div>
 
       {/* form login */}
-      <div
-        className="formwrap"
-        style={{
-          flex: 1,
-          minWidth: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "56px",
-          background: "var(--paper)",
-        }}
-      >
+      <div className="formwrap flex-1 min-w-0 flex items-center justify-center p-8 md:p-[56px] bg-paper">
         <div style={{ width: "100%", maxWidth: "400px" }}>
           <span
             style={{
