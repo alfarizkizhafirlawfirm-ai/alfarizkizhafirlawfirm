@@ -74,7 +74,9 @@ export async function saveArticle(formData: FormData) {
     }
   }
 
-  const { error } = await supabase.from('articles').insert({
+  const id = formData.get('id') as string | null
+
+  const payload: any = {
     title,
     category,
     author,
@@ -82,9 +84,21 @@ export async function saveArticle(formData: FormData) {
     seo_title,
     seo_description: seo_desc,
     slug,
-    status,
-    cover_url
-  })
+    status
+  }
+
+  if (cover_url) {
+    payload.cover_url = cover_url
+  }
+
+  let error
+  if (id) {
+    const { error: updateError } = await supabase.from('articles').update(payload).eq('id', id)
+    error = updateError
+  } else {
+    const { error: insertError } = await supabase.from('articles').insert(payload)
+    error = insertError
+  }
 
   if (error) throw error
 
