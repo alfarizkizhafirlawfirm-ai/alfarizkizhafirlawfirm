@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  serverActions: {
-    allowedOrigins: ['alfarizkizhafirlaw.netlify.app', '*.netlify.app']
-  }
+  /* config options here */
 };
 
 export default nextConfig;
