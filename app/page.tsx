@@ -25,9 +25,9 @@ export default async function Home() {
             "@context": "https://schema.org",
             "@type": "LegalService",
             "name": "Al Farizki & Zhafir Law Firm",
-            "image": "http://localhost:3000/images/logo.png",
+            "image": "https://alfarizkizhafirlaw.netlify.app/images/logo.png",
             "@id": "",
-            "url": "http://localhost:3000/",
+            "url": "https://alfarizkizhafirlaw.netlify.app/",
             "telephone": "+6285941862969",
             "email": "alfarizkizhafirlawfirm@gmail.com",
             "address": {
